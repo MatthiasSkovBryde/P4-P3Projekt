@@ -1,11 +1,7 @@
-* {
-    background-color: black;
-}
-
-.menu {
-    padding: 5px;
+.header {
+    height: 88px;
 }
 
 .user {
-    
+    color: white;
 }
