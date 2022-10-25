@@ -1,0 +1,27 @@
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\appsettings.json
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\FoodHub Web API.exe
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\FoodHub Web API.deps.json
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\FoodHub Web API.runtimeconfig.json
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\FoodHub Web API.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\FoodHub Web API.pdb
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.csproj.AssemblyReference.cache
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.AssemblyInfoInputs.cache
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.AssemblyInfo.cs
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.csproj.CoreCompileInputs.cache
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\scopedcss\bundle\FoodHub Web API.styles.css
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.csproj.CopyComplete
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\refint\FoodHub Web API.dll
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.pdb
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\FoodHub Web API.genruntimeconfig.cache
+C:\Users\mb\Desktop\P4-P3Projekt\FoodHub Web API\obj\Debug\net6.0\ref\FoodHub Web API.dll
