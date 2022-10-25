@@ -1,6 +1,6 @@
 ﻿namespace FoodHub_Web_API.Helpers
 {
-    public class AutoMapper
+    public class AutoMapper : Profile
     {
     }
 }
