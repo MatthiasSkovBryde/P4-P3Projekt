@@ -8,12 +8,15 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 
+import { LoginformComponent } from './loginform/loginform.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    ProductComponent
+    ProductComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
