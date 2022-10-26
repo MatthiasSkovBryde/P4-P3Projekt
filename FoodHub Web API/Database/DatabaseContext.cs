@@ -26,14 +26,13 @@
                 entity.Property(e => e.Created_At).HasDefaultValueSql("getdate()"); // Fanger datetime for hvornår entitien blev lavet i databasen. Sætter Created_At default til getdate()
                 entity.HasIndex(e => e.PhoneNumber).IsUnique();
             });
-            
+
             // Creating models for Account
-            modelbuilder.Entity<Account>().HasData(
-            new Account
+            modelbuilder.Entity<Account>(entity =>
             {
-                AccountID = 1,
-                Email = "test@test.com",
-                Password = "Passw0rd"
+                entity.HasOne(e => e.Customer).WithOne(e => e.Account);
+                entity.Property(e => e.Created_At).HasDefaultValueSql("getdate()");
+                entity.HasIndex(e => e.Email).IsUnique();
             });
         }
     }

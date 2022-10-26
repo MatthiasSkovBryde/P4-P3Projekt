@@ -24,10 +24,11 @@
         /// </summary>
         /// <param name="customerRepository"></param>
         /// <param name="mapper"></param>
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper, IAccountRepository accountRepository)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
+            _accountRepository = accountRepository;
         }
 
         public async Task<DirectCustomerResponse> Create(NewCustomerRequest request)
