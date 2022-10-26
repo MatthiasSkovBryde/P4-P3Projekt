@@ -49,24 +49,55 @@
             return null;
         }
 
-        public Task<DirectCustomerResponse> Delete(int customerId)
+        public async Task<DirectCustomerResponse> Delete(int customerId)
         {
-            throw new NotImplementedException();
+            Customer customer = await _customerRepository.Delete(customerId);
+
+            if (customer != null)
+            {
+                return _mapper.Map<DirectCustomerResponse>(customer);
+            }
+            return null;
         }
 
-        public Task<List<StaticCustomerResponse>> GetAll()
+        public async Task<List<StaticCustomerResponse>> GetAll()
         {
-            throw new NotImplementedException();
+            List<Customer> customer = await _customerRepository.GetAll();
+
+            if (customer != null)
+            {
+                return customer.Select(customer => _mapper.Map<Customer, StaticCustomerResponse>(customer)).ToList();
+            }
+            return null;
         }
 
-        public Task<DirectCustomerResponse> GetById(int customerId)
+        public async Task<DirectCustomerResponse> GetById(int customerId)
         {
-            throw new NotImplementedException();
+            Customer customer = await _customerRepository.GetById(customerId);
+
+            if (customer != null)
+            {
+                return _mapper.Map<DirectCustomerResponse>(customer);
+            }
+
+            return null;
         }
 
-        public Task<DirectCustomerResponse> Update(int customerId, NewCustomerRequest request)
+        public async Task<DirectCustomerResponse> Update(int customerId, NewCustomerRequest request)
         {
-            throw new NotImplementedException();
+            Account account = await _accountRepository.Update(request.Customer.AccountID, _mapper.Map<Account>(request.Account));
+            if (account != null)
+            {
+                return null;
+            }
+
+            Customer customer = await _customerRepository.Update(customerId, _mapper.Map<Customer>(request.Customer));
+            if (customer != null)
+            {
+                return _mapper.Map<DirectCustomerResponse>(customer);
+            }
+
+            return null;
         }
     }
 }
