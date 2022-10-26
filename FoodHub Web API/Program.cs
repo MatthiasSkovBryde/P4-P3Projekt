@@ -1,15 +1,15 @@
-
-using FoodHub_Web_API.Database;
-
 var builder = WebApplication.CreateBuilder(args);
 
 #region Add services to the container.
 builder.Services.AddTransient<ICustomerService, CustomerService>();
+builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
+
+builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 
 
 #endregion
 
-builder.Services.AddDbContext<DatabaseContext>(options =>
+builder.Services.AddDbContext<DatabaseContext>( options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
@@ -18,6 +18,9 @@ builder.Services.AddDbContext<DatabaseContext>(options =>
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddAutoMapper(typeof(Program));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

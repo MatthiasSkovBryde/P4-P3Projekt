@@ -16,19 +16,19 @@
         public Account Account { get; set; }
 
         [Column(TypeName = "nvarchar(32)")]
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
         [Column(TypeName = "nvarchar(32)")]
-        public string LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
 
         [Column(TypeName = "nvarchar(32)")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } = string.Empty;
 
         [Column(TypeName = "int")]
         public int ZipCode { get; set; } = 0;
 
         [Column(TypeName = "nvarchar(32)")]
-        public int Gender { get; set; }
+        public string Gender { get; set; } = string.Empty;
 
         /// <summary>
         /// Navigation reference
@@ -41,7 +41,5 @@
         /// </summary>
         [Column(TypeName = "datetime2")]
         public DateTime Modified_At { get; set; }
-
-
     }
 }

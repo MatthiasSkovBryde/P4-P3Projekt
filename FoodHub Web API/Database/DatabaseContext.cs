@@ -11,6 +11,7 @@
         /// Adder vores Customer entity osv.
         /// </summary>
         public DbSet<Customer> Customer { get; set; } 
+        public DbSet<Account> Account { get; set; }
 
         /// <summary>
         /// Creating models

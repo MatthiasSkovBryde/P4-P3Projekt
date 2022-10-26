@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fS8CPaC7fwQ0Z0DPEt7pzYrYxCT8ft/2s3MSlTJVJkysmf8JMLXPwgTkNK2Fbtq/Xf8VuRSZoaPjU6DNzmGf2A==",
+  "dgSpecHash": "flGSu5gN3VdQtj35olceplZuokEOlLR6XXElsgiZxHSP5GPrylkg9CqjCZPLBnrRwH0qqvyoA8+uQpOetnlTLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mb\\Desktop\\P4-P3Projekt\\FoodHub Web API\\FoodHub Web API.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mb\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\mb\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\mb\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\mb\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\mb\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\mb\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\mb\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.10\\microsoft.entityframeworkcore.6.0.10.nupkg.sha512",

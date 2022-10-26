@@ -12,9 +12,10 @@
     /// <summary>
     /// CustomerService is used to transfer data to and from CustomerRepository and CustomerController
     /// </summary>
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
-        private readonly ICustomerService _customerService;
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IAccountRepository _accountRepository;
         private readonly IMapper _mapper;
 
 
@@ -22,14 +23,49 @@
         /// Constuctor of CustomerService
         /// </summary>
         /// <param name="customerRepository"></param>
-        public CustomerService(ICustomerService customerRepository)
+        /// <param name="mapper"></param>
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
         {
-            _customerService = customerRepository;
+            _customerRepository = customerRepository;
+            _mapper = mapper;
         }
 
-        public async Task<List<StaticCustomerResponse>> Create( NewCustomerRequest request)
+        public async Task<DirectCustomerResponse> Create(NewCustomerRequest request)
         {
-            Account account = await _customerService.Create(request.Account);
+            Account account = await _accountRepository.Create( _mapper.Map<Account>(request.Account));
+            if (account == null)
+            {
+                return null;
+            }
+
+            request.Customer.AccountID = account.AccountID;
+
+            Customer customer = await _customerRepository.Create(_mapper.Map<Customer>(request.Customer));
+            if (customer != null)
+            {
+                return _mapper.Map<DirectCustomerResponse>(customer);
+            }
+            return null;
+        }
+
+        public Task<DirectCustomerResponse> Delete(int customerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<StaticCustomerResponse>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DirectCustomerResponse> GetById(int customerId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<DirectCustomerResponse> Update(int customerId, NewCustomerRequest request)
+        {
+            throw new NotImplementedException();
         }
     }
 }
