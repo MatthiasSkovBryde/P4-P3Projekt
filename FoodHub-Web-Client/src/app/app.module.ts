@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 
+import { LoginformComponent } from './loginform/loginform.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
