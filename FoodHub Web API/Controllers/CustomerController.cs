@@ -3,7 +3,7 @@
     /// <summary>
     /// Using CustomerController to contol customer. Route is used to determine what there is in the URL.
     /// </summary>
-    [Route("api/[controller")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
@@ -58,7 +58,7 @@
         /// <param name="customerId"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("{customerId")]
+        [Route("{customerId}")]
         public async Task<IActionResult> GetById(int customerId)
         {
             try
@@ -128,7 +128,7 @@
         }
 
         [HttpDelete]
-        [Route("customerId")]
+        [Route("{customerId}")]
         public async Task<IActionResult> Delete(int customerId)
         {
             try

@@ -2,10 +2,6 @@
 {
     public class AccountRequest
     {
-        [Required(ErrorMessage = "Username is required")]
-        [StringLength(32, MinimumLength = 6, ErrorMessage = "Username must be between")]
-        public string Username { get; set; }
-
         [Required(ErrorMessage = "* Password is required")]
         public string Password { get; set; } = string.Empty;
 
