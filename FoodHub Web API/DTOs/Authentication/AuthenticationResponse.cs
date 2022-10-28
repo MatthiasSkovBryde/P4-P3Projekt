@@ -1,7 +1,9 @@
-﻿namespace FoodHub_Web_API.DTOs.Authentication
+﻿
+namespace FoodHub_Web_API.DTOs.Authentication
 {
     public class AuthenticationResponse
     {
+        [JsonIgnore]
         public string RefreshToken { get; set; } = string.Empty;
 
         public string AccessToken { get; set; } = string.Empty;

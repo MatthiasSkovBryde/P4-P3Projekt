@@ -22,11 +22,11 @@
         }
 
         /// <summary>
-        /// Gets all customers
+        /// Gets all customers 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -130,7 +130,7 @@
 
         [HttpDelete]
         [Route("{customerId}")]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         public async Task<IActionResult> Delete(int customerId)
         {
             try

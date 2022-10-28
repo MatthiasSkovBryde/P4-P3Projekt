@@ -7,6 +7,9 @@
         Task<bool> RevokeToken(string token, string ipAddress);
     }
 
+    /// <summary>
+	/// AuthenticationService is used to transfer data to and from m_authenticationRepository and AuthenticationController.
+	/// </summary>
     public class AuthenticationService : IAuthenticationService
     {
         private readonly IAuthenticationRepository _authenticationRepository;
@@ -19,8 +22,8 @@
         /// <param name="mapper"></param>
         public AuthenticationService(IAuthenticationRepository authenticationRepository, IMapper mapper)
         {
-            _authenticationRepository = authenticationRepository;
             _mapper = mapper;
+            _authenticationRepository = authenticationRepository;
         }
 
         /// <summary>
@@ -58,6 +61,12 @@
             return null;
         }
 
+        /// <summary>
+        /// Revokes the token.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="ipAddress"></param>
+        /// <returns>token, ipAddress</returns>
         public async Task<bool> RevokeToken(string token, string ipAddress)
         {
             return await _authenticationRepository.RevokeToken(token, ipAddress);

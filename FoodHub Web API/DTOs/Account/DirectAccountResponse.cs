@@ -7,8 +7,6 @@ namespace FoodHub_Web_API.DTOs.Account
 
         public string Email { get; set; } = string.Empty;
 
-        public string Role { get; set; } = string.Empty;
-
         public StaticCustomerResponse Customer { get; set; } = null!;
     }
 }

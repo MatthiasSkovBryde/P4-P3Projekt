@@ -50,7 +50,6 @@ namespace FoodHub_Web_API.Helpers
                     new Claim(ClaimTypes.NameIdentifier, account.AccountID.ToString()),
                     new Claim(ClaimTypes.Email, account.Email.ToString()),
                     new Claim(ClaimTypes.GivenName, $"{account.Customer.FirstName} {account.Customer.LastName}"),
-                    new Claim(ClaimTypes.Role, account.Role.ToString())
                 }),
                 Audience = "User",
                 IssuedAt = DateTime.UtcNow,

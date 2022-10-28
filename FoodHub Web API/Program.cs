@@ -36,14 +36,12 @@ byte[] key = Encoding.ASCII.GetBytes(appSettings.Secret);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen( options =>
 {
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
     {
         Description = "Standard Authorization header using the Bearer scheme (\"bearer {token}\")\r\n\r\n Enter 'bearer'[space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
         In = ParameterLocation.Header,
-        Name = "Autherization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT"
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
     });
 
     options.OperationFilter<SecurityRequirementsOperationFilter>();

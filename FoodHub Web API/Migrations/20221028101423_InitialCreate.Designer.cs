@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub_Web_API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221028063512_InitialCreate")]
+    [Migration("20221028101423_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
