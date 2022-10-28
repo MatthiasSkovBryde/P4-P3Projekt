@@ -1,7 +1,4 @@
-﻿using FoodHub_Web_API.DTOs.Authentication;
-using Microsoft.VisualBasic;
-
-namespace FoodHub_Web_API.Services
+﻿namespace FoodHub_Web_API.Services
 {
     public interface IAuthenticationService
     {
@@ -31,10 +28,10 @@ namespace FoodHub_Web_API.Services
         /// </summary>
         /// <param name="request"></param>
         /// <param name="ipAddress"></param>
-        /// <returns></returns>
+        /// <returns>authenticationResponse</returns>
         public async Task<AuthenticationResponse> Authenticate(AuthenticationRequest request, string ipAddress)
         {
-            AuthenticationResponse authenticationResponse = await _accountRepository.Authenticate(request.Username_Email, request.Password, ipAddress); // Gets AuthenticationResponse from Repository
+            AuthenticationResponse authenticationResponse = await _accountRepository.Authenticate(request.Email, request.Password, ipAddress); // Gets AuthenticationResponse from Repository
 
             if (authenticationResponse != null)
             {
@@ -48,7 +45,7 @@ namespace FoodHub_Web_API.Services
         /// </summary>
         /// <param name="token"></param>
         /// <param name="ipAddress"></param>
-        /// <returns></returns>
+        /// <returns>authenticationResponse</returns>
         public async Task<AuthenticationResponse> RefreshToken(string token,  string ipAddress)
         {
             AuthenticationResponse authenticationResponse = await _accountRepository.RefreshToken(token, ipAddress);

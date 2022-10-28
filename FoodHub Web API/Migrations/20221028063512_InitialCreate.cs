@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FoodHub_Web_API.Migrations
 {
-    public partial class InitialCommid : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,6 @@ namespace FoodHub_Web_API.Migrations
                 {
                     AccountID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(64)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(255)", nullable: false),
                     Created_At = table.Column<DateTime>(type: "datetime2", nullable: false),

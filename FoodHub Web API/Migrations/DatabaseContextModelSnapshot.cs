@@ -48,10 +48,6 @@ namespace FoodHub_Web_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(32)");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)");
-
                     b.HasKey("AccountID");
 
                     b.ToTable("Account");

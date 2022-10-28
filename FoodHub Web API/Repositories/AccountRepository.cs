@@ -33,9 +33,9 @@ namespace FoodHub_Web_API.Repositories
         /// <param name="password"></param>
         /// <param name="ipAddress"></param>
         /// <returns></returns>
-        public async Task<AuthenticationResponse> Authenticate(string username_email, string password, string ipAddress)
+        public async Task<AuthenticationResponse> Authenticate(string email, string password, string ipAddress)
         {
-            Account account = await _context.Account.Include(e => e.Customer).FirstOrDefaultAsync(x => x.Username == username_email || x.Email == username_email);
+            Account account = await _context.Account.Include(e => e.Customer).FirstOrDefaultAsync(x => x.Email == email);
 
             if (account == null)
             {

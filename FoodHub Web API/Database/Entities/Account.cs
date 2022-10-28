@@ -5,9 +5,6 @@
         [Key]
         public int AccountID { get; set; }
 
-        [Column(TypeName = "nvarchar(32)")]
-        public string Username { get; set; } = string.Empty;
-
         [Column(TypeName = "nvarchar(64)")]
         public string Password { get; set; } = string.Empty;
 

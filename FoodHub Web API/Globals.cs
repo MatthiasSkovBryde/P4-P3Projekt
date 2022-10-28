@@ -15,6 +15,16 @@ global using System.Security.Claims;
 global using FoodHub_Web_API.Helpers;
 global using Microsoft.Extensions.Options;
 global using BC = BCrypt.Net.BCrypt;
+global using FoodHub_Web_API.DTOs.RefreshToken;
+global using System.Text;
+global using Microsoft.OpenApi.Models;
+global using Swashbuckle.AspNetCore.Filters;
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.IdentityModel.Tokens;
+global using Microsoft.AspNetCore.Authorization;
+
+
+
 
 
 

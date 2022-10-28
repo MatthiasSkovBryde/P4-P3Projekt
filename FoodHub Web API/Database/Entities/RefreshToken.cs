@@ -26,7 +26,7 @@
         [Column(TypeName = "nvarchar(255)")]
         public string ReplacedByToken { get; set; } = string.Empty;
 
-        public bool IsExpired => DateTime.UtcNow > Expires_At;
+        public bool IsExpired => DateTime.UtcNow >= Expires_At;
         public bool IsActive => Revoked_At == null && !IsExpired;
     }
 }

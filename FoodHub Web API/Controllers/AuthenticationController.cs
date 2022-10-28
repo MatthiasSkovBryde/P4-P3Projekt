@@ -35,7 +35,7 @@ namespace FoodHub_Web_API.Controllers
                 if (response == null)
                 {
                     // Returns statuscode 401 unautherized
-                    return Unauthorized("Incorrect Username/Email or Password");
+                    return Unauthorized("Incorrect Email or Password");
                 }
 
                 //Calling the SetTokenCookie method to set the cookies in the client browser, and makes them authenticated.

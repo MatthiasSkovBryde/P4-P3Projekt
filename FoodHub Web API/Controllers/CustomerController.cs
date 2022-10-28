@@ -129,6 +129,7 @@
 
         [HttpDelete]
         [Route("{customerId}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int customerId)
         {
             try
