@@ -3,9 +3,7 @@
     public class StaticAccountResponse
     {
         public int AccountID { get; set; } = 0;
-
         public string Email { get; set; } = string.Empty;
 
-        public string Role { get; set; } = string.Empty;
     }
 }

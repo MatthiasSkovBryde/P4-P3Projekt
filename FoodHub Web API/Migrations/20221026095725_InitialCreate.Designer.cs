@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub_Web_API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221028063512_InitialCreate")]
+    [Migration("20221026095725_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,10 +45,6 @@ namespace FoodHub_Web_API.Migrations
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(64)");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)");
 
                     b.HasKey("AccountID");
 
@@ -99,49 +95,6 @@ namespace FoodHub_Web_API.Migrations
                     b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("FoodHub_Web_API.Database.Entities.RefreshToken", b =>
-                {
-                    b.Property<int>("RefreshTokenID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RefreshTokenID"), 1L, 1);
-
-                    b.Property<int?>("AccountID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("CreatedByIp")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Expires_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ReplacedByToken")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("RevokedByIp")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<DateTime?>("Revoked_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("RefreshTokenID");
-
-                    b.HasIndex("AccountID");
-
-                    b.ToTable("RefreshToken");
-                });
-
             modelBuilder.Entity("FoodHub_Web_API.Database.Entities.Customer", b =>
                 {
                     b.HasOne("FoodHub_Web_API.Database.Entities.Account", "Account")
@@ -153,19 +106,10 @@ namespace FoodHub_Web_API.Migrations
                     b.Navigation("Account");
                 });
 
-            modelBuilder.Entity("FoodHub_Web_API.Database.Entities.RefreshToken", b =>
-                {
-                    b.HasOne("FoodHub_Web_API.Database.Entities.Account", null)
-                        .WithMany("RefreshTokens")
-                        .HasForeignKey("AccountID");
-                });
-
             modelBuilder.Entity("FoodHub_Web_API.Database.Entities.Account", b =>
                 {
                     b.Navigation("Customer")
                         .IsRequired();
-
-                    b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618
         }
