@@ -17,10 +17,10 @@
         /// Creating models
         /// </summary>
         /// <param name="modelbuilder"></param>
-        protected void OmModelCreating ( ModelBuilder modelBuilder)
+        protected void OmModelCreating ( ModelBuilder modelbuilder)
         {
             // Create a model for Customer
-            modelBuilder.Entity<Customer>( entity =>
+            modelbuilder.Entity<Customer>( entity =>
             {
                 entity.HasOne(e => e.Account).WithOne(e => e.Customer);
                 entity.Property(e => e.Created_At).HasDefaultValueSql("getdate()"); // Fanger datetime for hvornår entitien blev lavet i databasen. Sætter Created_At default til getdate()
@@ -28,17 +28,11 @@
             });
 
             // Creating models for Account
-            modelBuilder.Entity<Account>(entity =>
+            modelbuilder.Entity<Account>(entity =>
             {
                 entity.HasOne(e => e.Customer).WithOne(e => e.Account);
                 entity.Property(e => e.Created_At).HasDefaultValueSql("getdate()");
                 entity.HasIndex(e => e.Email).IsUnique();
-            });
-
-            // Capturing the datetime when the entities was createt in the database. Sets Created_At default to getdate()
-            modelBuilder.Entity<RefreshToken> ( entity =>
-            {
-                entity.Property(e => e.Created_At).HasDefaultValueSql("getdate()");
             });
         }
     }
