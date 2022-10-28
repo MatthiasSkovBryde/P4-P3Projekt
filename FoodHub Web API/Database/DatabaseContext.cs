@@ -12,6 +12,8 @@
         /// </summary>
         public DbSet<Customer> Customer { get; set; } 
         public DbSet<Account> Account { get; set; }
+        public DbSet<RefreshToken> RefreshToken { get; set; }
+
 
         /// <summary>
         /// Creating models

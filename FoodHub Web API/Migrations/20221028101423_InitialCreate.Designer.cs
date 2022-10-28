@@ -12,7 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub_Web_API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
+<<<<<<<< HEAD:FoodHub Web API/Migrations/20221026095725_InitialCreate.Designer.cs
     [Migration("20221026095725_InitialCreate")]
+========
+    [Migration("20221028101423_InitialCreate")]
+>>>>>>>> Matthias-Dev:FoodHub Web API/Migrations/20221028101423_InitialCreate.Designer.cs
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
