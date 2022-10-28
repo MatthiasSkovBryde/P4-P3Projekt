@@ -15,12 +15,12 @@ builder.Services.AddDbContext<DatabaseContext>( options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
 
 builder.Services.AddAutoMapper(typeof(Program));
-
 
 #region Configuration
 // Configure application configuartion settings
