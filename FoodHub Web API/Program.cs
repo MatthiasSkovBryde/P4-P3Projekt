@@ -6,6 +6,7 @@ builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 
+builder.Services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 #endregion
 
@@ -35,12 +36,14 @@ byte[] key = Encoding.ASCII.GetBytes(appSettings.Secret);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen( options =>
 {
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "Standard Authorization header usgin the Bearer scheme (\"bearer {token}\")",
+        Description = "Standard Authorization header using the Bearer scheme (\"bearer {token}\")\r\n\r\n Enter 'bearer'[space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
         In = ParameterLocation.Header,
         Name = "Autherization",
-        Type = SecuritySchemeType.ApiKey
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT"
     });
 
     options.OperationFilter<SecurityRequirementsOperationFilter>();
@@ -85,7 +88,7 @@ app.UseCors(builder =>
     .AllowAnyMethod();
 });
 
-app.UseHttpsRedirection();
+app.UseAuthentication();
 
 app.UseAuthorization();
 

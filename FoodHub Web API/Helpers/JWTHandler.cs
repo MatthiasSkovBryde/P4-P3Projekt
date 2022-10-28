@@ -44,6 +44,7 @@ namespace FoodHub_Web_API.Helpers
             byte[] key = Encoding.ASCII.GetBytes(appSettings.Secret);
             SecurityTokenDescriptor tokenDescriptor = new()
             {
+                Issuer = "FoodHub",
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.NameIdentifier, account.AccountID.ToString()),
@@ -51,7 +52,10 @@ namespace FoodHub_Web_API.Helpers
                     new Claim(ClaimTypes.GivenName, $"{account.Customer.FirstName} {account.Customer.LastName}"),
                     new Claim(ClaimTypes.Role, account.Role.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(15),
+                Audience = "User",
+                IssuedAt = DateTime.UtcNow,
+                NotBefore = DateTime.UtcNow,
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             SecurityToken token = tokenHandler.CreateToken(tokenDescriptor);

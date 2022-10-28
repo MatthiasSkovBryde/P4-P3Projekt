@@ -9,7 +9,7 @@
 
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly IAccountRepository _accountRepository;
+        private readonly IAuthenticationRepository _authenticationRepository;
         private readonly IMapper _mapper;
 
         /// <summary>
@@ -17,9 +17,9 @@
         /// </summary>
         /// <param name="accountRepository"></param>
         /// <param name="mapper"></param>
-        public AuthenticationService(IAccountRepository accountRepository, IMapper mapper)
+        public AuthenticationService(IAuthenticationRepository authenticationRepository, IMapper mapper)
         {
-            _accountRepository = accountRepository;
+            _authenticationRepository = authenticationRepository;
             _mapper = mapper;
         }
 
@@ -31,7 +31,7 @@
         /// <returns>authenticationResponse</returns>
         public async Task<AuthenticationResponse> Authenticate(AuthenticationRequest request, string ipAddress)
         {
-            AuthenticationResponse authenticationResponse = await _accountRepository.Authenticate(request.Email, request.Password, ipAddress); // Gets AuthenticationResponse from Repository
+            AuthenticationResponse authenticationResponse = await _authenticationRepository.Authenticate(request.Email, request.Password, ipAddress); // Gets AuthenticationResponse from Repository
 
             if (authenticationResponse != null)
             {
@@ -48,7 +48,7 @@
         /// <returns>authenticationResponse</returns>
         public async Task<AuthenticationResponse> RefreshToken(string token,  string ipAddress)
         {
-            AuthenticationResponse authenticationResponse = await _accountRepository.RefreshToken(token, ipAddress);
+            AuthenticationResponse authenticationResponse = await _authenticationRepository.RefreshToken(token, ipAddress);
 
             if (authenticationResponse != null)
             {
@@ -60,7 +60,7 @@
 
         public async Task<bool> RevokeToken(string token, string ipAddress)
         {
-            return await _accountRepository.RevokeToken(token, ipAddress);
+            return await _authenticationRepository.RevokeToken(token, ipAddress);
         }
     }
 }

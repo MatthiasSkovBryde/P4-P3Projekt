@@ -1,5 +1,4 @@
-﻿
-namespace FoodHub_Web_API.Helpers
+﻿namespace FoodHub_Web_API.Helpers
 {
     /// <summary>
     /// Using CreateMap() to make custom maps from an object to another object. AutoMapper

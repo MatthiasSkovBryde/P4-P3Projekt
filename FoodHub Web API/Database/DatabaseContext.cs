@@ -12,6 +12,8 @@
         /// </summary>
         public DbSet<Customer> Customer { get; set; } 
         public DbSet<Account> Account { get; set; }
+        public DbSet<RefreshToken> RefreshToken { get; set; }
+
 
         /// <summary>
         /// Creating models
@@ -32,6 +34,7 @@
             {
                 entity.HasOne(e => e.Customer).WithOne(e => e.Account);
                 entity.Property(e => e.Created_At).HasDefaultValueSql("getdate()");
+                entity.Property(e => e.Role).HasDefaultValueSql("Customer");
                 entity.HasIndex(e => e.Email).IsUnique();
             });
 
