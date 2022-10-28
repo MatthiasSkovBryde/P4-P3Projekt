@@ -6,7 +6,7 @@ builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 
-
+builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
 #endregion
 
 builder.Services.AddDbContext<DatabaseContext>( options =>
@@ -14,16 +14,58 @@ builder.Services.AddDbContext<DatabaseContext>( options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 
-
 // Add services to the container.
 
 builder.Services.AddControllers();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+
+#region Configuration
+// Configure application configuartion settings
+IConfigurationSection appSettingsSection = builder.Configuration.GetSection("AppSettings");
+builder.Services.Configure<AppSettings>(appSettingsSection);
+
+AppSettings appSettings = appSettingsSection.Get<AppSettings>();
+byte[] key = Encoding.ASCII.GetBytes(appSettings.Secret);
+#endregion
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen( options =>
+{
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        Description = "Standard Authorization header usgin the Bearer scheme (\"bearer {token}\")",
+        In = ParameterLocation.Header,
+        Name = "Autherization",
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
+
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(x =>
+    {
+       x.RequireHttpsMetadata = false;
+       x.SaveToken = true;
+       x.TokenValidationParameters = new TokenValidationParameters
+       {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ClockSkew = TimeSpan.Zero
+       };
+    });
 
 var app = builder.Build();
 
