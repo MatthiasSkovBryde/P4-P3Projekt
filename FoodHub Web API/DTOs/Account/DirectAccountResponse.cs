@@ -1,5 +1,4 @@
-﻿
-namespace FoodHub_Web_API.DTOs.Account
+﻿namespace FoodHub_Web_API.DTOs.Account
 {
     public class DirectAccountResponse
     {
