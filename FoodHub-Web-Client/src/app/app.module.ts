@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
+import { SignupformComponent } from './components/signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LoginformComponent } from './components/loginform/loginform.component';
     HomeComponent,
     HeaderComponent,
     ProductComponent,
-    LoginformComponent
+    LoginformComponent,
+    SignupformComponent
   ],
   imports: [
     BrowserModule,
