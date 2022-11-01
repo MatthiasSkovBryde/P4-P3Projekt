@@ -15,6 +15,7 @@ import { AuthenticationService } from './_services/authentication.service';
 import { AuthenticationInterceptor } from './_interceptor/authentication.interceptor';
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SignupformComponent } from './components/signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ProductComponent,
     LoginComponent,
+    SignupformComponent
   ],
   imports: [
     BrowserModule,
