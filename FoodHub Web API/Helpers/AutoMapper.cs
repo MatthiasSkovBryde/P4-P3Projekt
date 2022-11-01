@@ -14,6 +14,8 @@
             CreateMap<Customer, DirectCustomerResponse>();
             CreateMap<Customer, StaticCustomerResponse>();
             CreateMap<CustomerRequest, Customer>();
+
+            CreateMap<AuthenticationResponse, StaticRefreshTokenResponse>();
         }
     }
 }
