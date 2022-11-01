@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     this.authenticationService.authenticate(this.request).subscribe ({
       next: () => {
         this.router.navigate([this.returnUrl]);
-        console.log("login yse")
       },
       error: (err) => {
         console.error(Object.values(err.error.errors).join(', '));
