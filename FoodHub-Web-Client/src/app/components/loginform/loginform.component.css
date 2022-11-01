@@ -3,7 +3,7 @@
     height: cover;
     margin: auto;
     border-radius: 3px;
-  
+    color: white;
     background: linear-gradient(black, grey );
     border: 1px solid black;
     text-transform: capitalize;
@@ -28,10 +28,16 @@ input[type=password] {
     font-size: 18px;
 }
 
+a{
+    font-size: 15px;
+    color: lightblue;
+}
+
 button {
+    color: white;
     margin: auto;
     width: 60%;
-    border: 3px solid black;
+    border: 3px solid lightgrey;
     padding: 10px;
     margin-top: 20px;
     display: block;
