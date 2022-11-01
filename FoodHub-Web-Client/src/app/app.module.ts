@@ -12,6 +12,7 @@ import { ProductComponent } from './components/product/product.component';
 import { LoginComponent } from './components/login/login.component';
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SignupformComponent } from './components/signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ProductComponent,
     LoginComponent,
+    SignupformComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
+
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'DKK'},
     { provide: LOCALE_ID, useValue: 'en-DK'}
   ],
