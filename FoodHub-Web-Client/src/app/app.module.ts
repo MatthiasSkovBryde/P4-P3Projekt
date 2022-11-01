@@ -10,6 +10,9 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductComponent } from './components/product/product.component';
 import { LoginComponent } from './components/login/login.component';
+import { appInitializer } from './helpers/app.initializer';
+import { AuthenticationService } from './_services/authentication.service';
+import { AuthenticationInterceptor } from './_interceptor/authentication.interceptor';
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SignupformComponent } from './components/signupform/signupform.component';
@@ -26,13 +29,17 @@ import { SignupformComponent } from './components/signupform/signupform.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-
+    { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService]},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true},
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'DKK'},
-    { provide: LOCALE_ID, useValue: 'en-DK'}
+    { provide: LOCALE_ID, useValue: 'en-DK'},
+    
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
