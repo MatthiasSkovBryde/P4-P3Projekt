@@ -2,6 +2,7 @@
 {
     public interface IAccountRepository
     {
+        Task<List<Account>> GetAll();
         Task<Account> GetById(int accountId);
         Task<Account> Create(Account request);
         Task<Account> Update(int accountId, Account requset);
@@ -10,23 +11,31 @@
     public class AccountRepository : IAccountRepository
     {
         private readonly DatabaseContext _context;
+        private readonly AppSettings _appSettings;
 
         /// <summary>
         /// Constuctor for AccountRepository
         /// </summary>
         /// <param name="context"></param>
-        public AccountRepository( DatabaseContext context)
+        public AccountRepository( DatabaseContext context, IOptions<AppSettings> appSettings)
         {
+            _appSettings = appSettings.Value;
             _context = context;
+        }
+
+        public async Task<List<Account>> GetAll()
+        {
+            return await _context.Account.Include(x => x.Customer).ToListAsync();
         }
 
         /// <summary>
         /// Creates an Account in the database
         /// </summary>
         /// <param name="request"></param>
-        /// <returns></returns>
+        /// <returns>DirectResponse</returns>
         public async Task<Account> Create(Account request)
         {
+            request.Password = BC.HashPassword(request.Password);
             _context.Account.Add(request);
             await _context.SaveChangesAsync();
             return await GetById(request.AccountID);
@@ -47,6 +56,7 @@
             Account account = await GetById(accountId);
             if (account != null)
             {
+                requset.Password = BC.HashPassword(requset.Password);
                 account.Email = requset.Email;
                 account.Modified_At = DateTime.UtcNow;
 
