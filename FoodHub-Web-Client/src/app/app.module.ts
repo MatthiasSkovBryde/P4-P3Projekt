@@ -27,15 +27,17 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService]},
     { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true},
-    { provide: LocationStrategy, useClass: HashLocationStrategy, multi: true},
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'DKK'},
-    { provide: LOCALE_ID, useValue: 'en-DK'}
+    { provide: LOCALE_ID, useValue: 'en-DK'},
+    
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
