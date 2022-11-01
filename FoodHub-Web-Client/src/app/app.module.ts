@@ -15,6 +15,7 @@ import { AuthenticationService } from './_services/authentication.service';
 import { AuthenticationInterceptor } from './_interceptor/authentication.interceptor';
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SignupformComponent } from './components/signupform/signupform.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ProductComponent,
     LoginComponent,
+    SignupformComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +32,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService]},
-    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true},
-    { provide: LocationStrategy, useClass: HashLocationStrategy, multi: true},
+   // { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService]},
+    //{ provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true},
+   // { provide: LocationStrategy, useClass: HashLocationStrategy, multi: true},
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'DKK'},
     { provide: LOCALE_ID, useValue: 'en-DK'}
   ],
