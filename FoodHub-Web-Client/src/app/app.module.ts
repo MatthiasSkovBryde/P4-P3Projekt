@@ -25,6 +25,9 @@ import { SignupformComponent } from './components/signupform/signupform.componen
     ProductComponent,
     LoginComponent,
     SignupformComponent
+    LoginformComponent,
+    FooterComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
