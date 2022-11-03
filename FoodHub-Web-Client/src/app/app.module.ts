@@ -16,6 +16,8 @@ import { AuthenticationInterceptor } from './_interceptor/authentication.interce
 import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SignupformComponent } from './components/signupform/signupform.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,7 @@ import { SignupformComponent } from './components/signupform/signupform.componen
     HeaderComponent,
     ProductComponent,
     LoginComponent,
-    SignupformComponent
-    LoginformComponent,
+    SignupformComponent,
     FooterComponent,
     ProductListComponent
   ],

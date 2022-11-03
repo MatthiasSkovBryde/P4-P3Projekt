@@ -6,8 +6,7 @@
       <i class="fa fa-envelope" style="margin-left: -30px; cursor: pointer;"></i>
 
       <label for="psw"><b>Password</b></label>
-
-      <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required [(ngModel)]="request.password" >
+      <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required [(ngModel)]="request.password">
       <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye':'fa fa-eye-slash'" style="margin-left: -30px; cursor: pointer;"></i></span>
 
       <button type="submit">Login</button>
