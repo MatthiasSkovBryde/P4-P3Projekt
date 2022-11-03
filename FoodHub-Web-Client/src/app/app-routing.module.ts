@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductComponent } from './components/product/product.component';
+import { LoginformComponent } from './loginform/loginform.component';
 
 import { SignupformComponent } from './components/signupform/signupform.component';
 
@@ -11,7 +12,6 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductComponent },
   {path: 'login', component: LoginComponent},
   { path:'signup', component: SignupformComponent},
-  
   { path: '**', redirectTo: ''} // MUST BE LAST IN ARRAY!
 ];
 
