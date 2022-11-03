@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +6,18 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* .card {
+  min-width: 250px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .card-container>*:not(.circle-link),
+  .terminal {
+    width: 100%;
+  }
+
 
 .container{
   width: auto;
@@ -43,3 +56,4 @@ body {
     margin-bottom: 20px;
   }
 }
+
