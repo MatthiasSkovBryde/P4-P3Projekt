@@ -1,9 +1,9 @@
 .container {
-    width: 360px;
-    height: 320px;
+    width: 420px;
+    height: cover;
     margin: auto;
     border-radius: 3px;
-  
+    color: white;
     background: linear-gradient(black, grey );
     border: 1px solid black;
     text-transform: capitalize;
@@ -25,7 +25,14 @@ input[type=password] {
     height: 35px;
     margin-top: 20px;
     border: 2px solid black;
-    
+    font-size: 18px;
+}
+
+select[name=gender] {
+    width: 320px;
+    height: 35px;
+    margin-top: 10px;
+    border: 2px solid black;
     font-size: 18px;
 }
 
@@ -34,10 +41,12 @@ button {
     width: 60%;
     border: 3px solid black;
     padding: 10px;
-    margin-top: 20px;
+    border: 3px solid lightgrey;
+    color: white;
+    margin-top: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    background-color:#0d6efd ;
+    background-color:#0d6efd;
 }
 

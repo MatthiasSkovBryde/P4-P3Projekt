@@ -26,6 +26,7 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -129,6 +130,7 @@
 
         [HttpDelete]
         [Route("{customerId}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int customerId)
         {
             try
