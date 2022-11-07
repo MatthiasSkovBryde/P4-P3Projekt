@@ -2,12 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-
-import { ProductComponent } from './components/product/product.component';
-
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-
 
 
 const routes: Routes = [

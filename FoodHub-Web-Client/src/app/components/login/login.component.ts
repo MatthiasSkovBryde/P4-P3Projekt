@@ -1,5 +1,6 @@
 import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { AuthenticationRequest } from 'src/app/_models/authentication';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 
