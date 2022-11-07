@@ -3,21 +3,28 @@
     <form>
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
+        <i class="fa fa-envelope" style="margin-left: -30px; cursor: pointer;"></i>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required>
+        <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"
+                style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
 
         <label for="firstname"><b>FirstName</b></label>
         <input type="text" placeholder="Enter FirstName" name="firstname" required>
+        <i class='fas fa-user-alt' style="margin-left: -30px; cursor: pointer;"></i>
 
         <label for="lastname"><b>LastName</b></label>
         <input type="text" placeholder="Enter LastName" name="lastname" required>
+        <i class='fas fa-user-alt' style="margin-left: -30px; cursor: pointer;"></i>
 
         <label for="phonenr"><b>PhoneNumber</b></label>
         <input type="text" placeholder="Enter PhoneNumber" name="phonenr" required>
-        
-                <label for="zipcode"><b>ZipCode</b></label>
-                <input type="text" placeholder="Enter ZipCode" name="zipcode" required>
+        <i class="fa fa-phone" style="margin-left: -30px; cursor: pointer;"></i>
+
+        <label for="zipcode"><b>ZipCode</b></label>
+        <input type="text" placeholder="Enter ZipCode" name="zipcode" required>
+        <i class="fa fa-map-marker" style="margin-left: -30px; cursor: pointer;"></i>
 
 
         <label for="gender"> <b>Select you gender:</b></label>

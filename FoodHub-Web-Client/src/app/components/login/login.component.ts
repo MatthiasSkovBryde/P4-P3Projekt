@@ -1,5 +1,6 @@
 import { Component, ErrorHandler, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { AuthenticationRequest } from 'src/app/_models/authentication';
 import { AuthenticationService } from 'src/app/_services/authentication.service';
 
@@ -10,9 +11,17 @@ import { AuthenticationService } from 'src/app/_services/authentication.service'
 })
 export class LoginComponent implements OnInit {
 
+  visible: boolean = true;
+  changetype: boolean = true;
+
+  viewpass() {
+    this.visible = !this.visible;
+    this.changetype = !this.changetype;
+  }
+
   constructor(private router: Router, private authenticationService: AuthenticationService, private route: ActivatedRoute) { }
 
-  public request: AuthenticationRequest = {email: '', password: ''};
+  public request: AuthenticationRequest = { email: '', password: '' };
   private returnUrl: string = "";
   private guardType: number = 0;
 
@@ -27,7 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    this.authenticationService.authenticate(this.request).subscribe ({
+    this.authenticationService.authenticate(this.request).subscribe({
       next: () => {
         this.router.navigate([this.returnUrl]);
       },
@@ -37,5 +46,4 @@ export class LoginComponent implements OnInit {
     });
   }
 }
-  
-  
+
