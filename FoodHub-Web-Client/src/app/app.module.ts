@@ -17,7 +17,7 @@ import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@ang
 import { FormsModule } from '@angular/forms';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
