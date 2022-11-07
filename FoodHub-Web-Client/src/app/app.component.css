@@ -1,4 +1,12 @@
 .wrapper {
     position: relative;
-    top: 88px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+app-footer {
+    position: sticky;
+    top: 100%;
 }

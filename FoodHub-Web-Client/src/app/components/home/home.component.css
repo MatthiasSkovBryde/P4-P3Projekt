@@ -1,31 +1,59 @@
-.card {
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .card {
   min-width: 250px;
 }
 
-@media screen and (max-width: 767px) 
-{
-  .card-container > *:not(.circle-link).terminal {
+@media screen and (max-width: 767px) {
+
+  .card-container>*:not(.circle-link),
+  .terminal {
     width: 100%;
   }
 
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
 
-  .card.highlight-card span {
-    margin-left: 72px;
-  }
+.container{
+  width: auto;
+}
 
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    margin: auto;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }
 
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
-}
