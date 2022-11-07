@@ -7,8 +7,8 @@
 
         <label for="psw"><b>Password</b></label>
         <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required>
-        <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye':'fa fa-eye-slash'"
-                style="margin-left: -30px; cursor: pointer;"></i></span>
+        <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"
+                style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
 
         <label for="firstname"><b>FirstName</b></label>
         <input type="text" placeholder="Enter FirstName" name="firstname" required>
