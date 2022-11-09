@@ -2,8 +2,10 @@
     <h1>signup</h1>
     <form>
         <label for="email"><b>Email</b></label>
+
         <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="accountRequest.email">
         <i class="fa fa-envelope" style="margin-left: -30px; cursor: pointer;"></i>
+
 
         <label for="psw"><b>Password</b></label>
         <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" [(ngModel)]="accountRequest.password">
@@ -16,6 +18,7 @@
                 style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
 
         <label for="firstname"><b>FirstName</b></label>
+
         <input type="text" placeholder="Enter First name" name="firstname" [(ngModel)]="customerRequest.firstName">
         <i class='fas fa-user-alt' style="margin-left: -30px; cursor: pointer;"></i>
 
@@ -30,6 +33,7 @@
         <label for="zipcode"><b>ZipCode</b></label>
         <input type="text" placeholder="Enter ZipCode" name="zipcode" [(ngModel)]="customerRequest.zipCode">
         <i class="fa fa-map-marker" style="margin-left: -30px; cursor: pointer;"></i>
+
 
         <button type="submit" (click)="submit()">signup</button>
     </form>
