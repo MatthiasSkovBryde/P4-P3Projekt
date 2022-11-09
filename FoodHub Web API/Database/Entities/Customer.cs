@@ -11,7 +11,6 @@
         /// <summary>
         /// Fireign Key
         /// </summary>
-        [ForeignKey("Account.AccountID")]
         public int AccountID { get; set; }
         public Account Account { get; set; }
 

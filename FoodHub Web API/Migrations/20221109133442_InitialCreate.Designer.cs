@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub_Web_API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221109115106_InitialCommit")]
-    partial class InitialCommit
+    [Migration("20221109133442_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,7 +33,9 @@ namespace FoodHub_Web_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountID"), 1L, 1);
 
                     b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -47,6 +49,9 @@ namespace FoodHub_Web_API.Migrations
                         .HasColumnType("nvarchar(64)");
 
                     b.HasKey("AccountID");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("Account");
                 });
@@ -63,7 +68,9 @@ namespace FoodHub_Web_API.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -88,6 +95,9 @@ namespace FoodHub_Web_API.Migrations
                     b.HasIndex("AccountID")
                         .IsUnique();
 
+                    b.HasIndex("PhoneNumber")
+                        .IsUnique();
+
                     b.ToTable("Customer");
                 });
 
@@ -107,7 +117,9 @@ namespace FoodHub_Web_API.Migrations
                         .HasColumnType("nvarchar(16)");
 
                     b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getdate()");
 
                     b.Property<DateTime>("Expires_At")
                         .HasColumnType("datetime2");

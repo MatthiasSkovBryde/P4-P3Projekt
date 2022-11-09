@@ -16,7 +16,7 @@ export class SignupformComponent implements OnInit {
   
   private returnUrl: string = "";
   public accountRequest: AccountRequest = {email: '', password: '' };
-  public customerRequest: CustomerRequest = { accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: 0, customerID: 0 };
+  public customerRequest: CustomerRequest = { accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: '', customerID: 0 };
   private request: NewCustomerRequest = { account: this.accountRequest, customer: this.customerRequest };
   public passwordValidator: string = '';
   public isValid: boolean = false;
@@ -42,13 +42,15 @@ export class SignupformComponent implements OnInit {
   }
 
   public validate(): Promise<boolean> {
-
     return new Promise<boolean>((resolve) => {
 
       if (this.accountRequest.password === this.passwordValidator) {
         resolve(true);
       }
-      resolve(false);
+      else {
+        alert("Password arent the same");
+        resolve(false);
+      }
     })
   }
 
