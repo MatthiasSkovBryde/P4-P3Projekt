@@ -5,5 +5,4 @@ export interface CustomerRequest {
     lastName: string;
     phoneNumber: string;
     zipCode: number;
-    gender: string;
 }

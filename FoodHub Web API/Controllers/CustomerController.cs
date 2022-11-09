@@ -26,7 +26,6 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             try

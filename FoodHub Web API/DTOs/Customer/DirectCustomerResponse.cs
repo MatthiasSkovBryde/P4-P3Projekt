@@ -14,8 +14,6 @@
 
         public int ZipCode { get; set; } = 0;
 
-        public string Gender { get; set; } = string.Empty;
-
         public DateTime Created_At { get; set; }
     }
 }
