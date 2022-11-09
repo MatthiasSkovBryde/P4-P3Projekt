@@ -26,6 +26,4 @@ export class HeaderComponent implements OnInit {
   public logud(): void {
     this.authenticationService.revoketoken().subscribe();
   }
-  
-
 }
