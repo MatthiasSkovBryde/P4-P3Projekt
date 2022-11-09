@@ -5,6 +5,5 @@ export interface StaticCustomerResponse  {
     lastName: string;
     phoneNumber: string;
     zipCode: number;
-    gender: string;
     created_At: Date; 
 } 

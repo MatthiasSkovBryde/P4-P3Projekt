@@ -27,9 +27,6 @@
         [Column(TypeName = "int")]
         public int ZipCode { get; set; } = 0;
 
-        [Column(TypeName = "nvarchar(32)")]
-        public string Gender { get; set; } = string.Empty;
-
         /// <summary>
         /// Navigation reference
         /// </summary>
