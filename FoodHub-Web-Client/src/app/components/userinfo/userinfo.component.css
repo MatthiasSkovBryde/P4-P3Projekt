@@ -1,0 +1,12 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 2px solid gray;
+    color: white;
+    border-radius: .25rem;
+}
