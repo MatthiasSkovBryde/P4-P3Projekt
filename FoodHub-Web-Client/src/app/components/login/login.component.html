@@ -5,12 +5,16 @@
     <form>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="Email" required [(ngModel)]="request.email">
-      <i class="fa fa-envelope"></i>
+
+      <i class="fa fa-envelope" style="margin-left: -30px; cursor: pointer; color: #000;"></i>
+
 
       <label for="psw"><b>Password</b></label>
       <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required [(ngModel)]="request.password">
       <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'" style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
 
+      <a routerLink="/signup" class="text-capitalize text-white"> har du ikke en konto </a>
+      
       <button type="submit" (click)="login()">Login</button>
 
     </form>

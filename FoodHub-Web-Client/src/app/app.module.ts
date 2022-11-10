@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { UserinfoComponent } from './components/userinfo/userinfo.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
     LoginComponent,
     SignupformComponent,
     FooterComponent,
-    ProductListComponent
+    ProductListComponent,
+    UserinfoComponent
   ],
   imports: [
     BrowserModule,
