@@ -16,6 +16,9 @@
         public string PhoneNumber { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "* ZipCode is required")]
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "* Address is required")]
+        public string Address { get; set; } = string.Empty;
     }
 }

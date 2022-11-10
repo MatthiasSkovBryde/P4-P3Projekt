@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FoodHub_Web_API.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221109133442_InitialCreate")]
+    [Migration("20221110112048_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,10 @@ namespace FoodHub_Web_API.Migrations
                     b.Property<int>("AccountID")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
                     b.Property<DateTime>("Created_At")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
@@ -87,8 +91,9 @@ namespace FoodHub_Web_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(32)");
 
-                    b.Property<int>("ZipCode")
-                        .HasColumnType("int");
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(4)");
 
                     b.HasKey("CustomerID");
 

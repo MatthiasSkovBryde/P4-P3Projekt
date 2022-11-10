@@ -8,4 +8,5 @@ export interface DirectCustomerResponse {
     phoneNumber: string;
     zipCode: number;
     created_At: Date;
+    address: string;
 }
