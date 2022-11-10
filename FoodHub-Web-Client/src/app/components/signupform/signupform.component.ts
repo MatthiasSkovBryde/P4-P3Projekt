@@ -48,7 +48,7 @@ export class SignupformComponent implements OnInit {
         resolve(true);
       }
       else {
-        alert("Password arent the same");
+        alert("Password aren't the same");
         resolve(false);
       }
     })
