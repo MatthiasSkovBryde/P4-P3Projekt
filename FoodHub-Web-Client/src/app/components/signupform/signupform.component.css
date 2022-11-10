@@ -28,14 +28,6 @@ input[type=password] {
     font-size: 18px;
 }
 
-select[name=gender] {
-    width: 320px;
-    height: 35px;
-    margin-top: 10px;
-    border: 2px solid black;
-    font-size: 18px;
-}
-
 button {
     margin: auto;
     width: 60%;

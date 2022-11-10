@@ -4,6 +4,6 @@ export interface CustomerRequest {
     firstName: string;
     lastName: string;
     phoneNumber: string;
-    zipCode: number;
-    gender: string;
+    zipCode: string;
+    address: string;
 }

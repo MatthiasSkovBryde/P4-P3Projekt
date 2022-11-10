@@ -2,39 +2,42 @@
     <h1>signup</h1>
     <form>
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="accountRequest.email">
         <i class="fa fa-envelope" style="margin-left: -30px; cursor: pointer;"></i>
 
+
         <label for="psw"><b>Password</b></label>
-        <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required>
+        <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" [(ngModel)]="accountRequest.password">
+        <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"
+                style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
+
+        <label for="psw"><b>Confirm Password</b></label>
+        <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password"  [(ngModel)]="passwordValidator">
         <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"
                 style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
 
         <label for="firstname"><b>FirstName</b></label>
-        <input type="text" placeholder="Enter FirstName" name="firstname" required>
+
+        <input type="text" placeholder="Enter First name" name="firstname" [(ngModel)]="customerRequest.firstName">
         <i class='fas fa-user-alt' style="margin-left: -30px; cursor: pointer;"></i>
 
         <label for="lastname"><b>LastName</b></label>
-        <input type="text" placeholder="Enter LastName" name="lastname" required>
+        <input type="text" placeholder="Enter LastName" name="lastname" [(ngModel)]="customerRequest.lastName">
         <i class='fas fa-user-alt' style="margin-left: -30px; cursor: pointer;"></i>
 
         <label for="phonenr"><b>PhoneNumber</b></label>
-        <input type="text" placeholder="Enter PhoneNumber" name="phonenr" required>
+        <input type="text" placeholder="Enter PhoneNumber" name="phonenr" [(ngModel)]="customerRequest.phoneNumber">
         <i class="fa fa-phone" style="margin-left: -30px; cursor: pointer;"></i>
 
         <label for="zipcode"><b>ZipCode</b></label>
-        <input type="text" placeholder="Enter ZipCode" name="zipcode" required>
+        <input type="text" placeholder="Enter ZipCode" name="zipcode" [(ngModel)]="customerRequest.zipCode">
+        <i class="fa fa-map-marker" style="margin-left: -30px; cursor: pointer;"></i>
+        
+        <label for="address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Your Address" name="zipcode" [(ngModel)]="customerRequest.address">
         <i class="fa fa-map-marker" style="margin-left: -30px; cursor: pointer;"></i>
 
-
-        <label for="gender"> <b>Select you gender:</b></label>
-        <select name="gender">
-            <option value="none" selected>Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">other</option>
-        </select>
-
-        <button type="submit">signup</button>
+        <button type="submit" (click)="submit()">signup</button>
     </form>
 </div>

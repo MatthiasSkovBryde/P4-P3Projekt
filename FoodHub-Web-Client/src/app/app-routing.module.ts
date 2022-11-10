@@ -5,12 +5,20 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 
+import { AuthenticationGuard } from './_services/authentication.guard.service'
 
-const routes: Routes = [
+import { UserinfoComponent } from './components/userinfo/userinfo.component';
+
+
+
+// Tilføj " , canActivate: [AuthenticationGuard] " hvis man skal vræe logget ind for at tilgå componentet.
+// Fx { path: 'product-list', component: ProductListComponent, canActivate: [AuthenticationGuard]}
+const routes: Routes = [ 
   { path: '', component: HomeComponent },
-  { path: 'product-list', component: ProductListComponent }, //product-list:id
+  { path: 'product-list', component: ProductListComponent}, //product-list:id
   { path: 'login', component: LoginComponent },
   { path:'signup', component: SignupformComponent },
+  {path: 'profile', component:UserinfoComponent},
   { path: '**', redirectTo: ''} // MUST BE LAST IN ARRAY!
 ];
 

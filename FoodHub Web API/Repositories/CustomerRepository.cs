@@ -87,7 +87,7 @@
                 customer.LastName = request.LastName;
                 customer.PhoneNumber = request.PhoneNumber;
                 customer.ZipCode = request.ZipCode;
-                customer.Gender = request.Gender;
+                customer.Address = request.Address;
                 customer.Modified_At = DateTime.UtcNow;
 
                 await _context.SaveChangesAsync();

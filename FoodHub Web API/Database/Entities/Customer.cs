@@ -11,7 +11,6 @@
         /// <summary>
         /// Fireign Key
         /// </summary>
-        [ForeignKey("Account.AccountID")]
         public int AccountID { get; set; }
         public Account Account { get; set; }
 
@@ -24,11 +23,11 @@
         [Column(TypeName = "nvarchar(32)")]
         public string PhoneNumber { get; set; } = string.Empty;
 
-        [Column(TypeName = "int")]
+        [Column(TypeName = "nvarchar(4)")]
         public int ZipCode { get; set; } = 0;
 
         [Column(TypeName = "nvarchar(32)")]
-        public string Gender { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
         /// <summary>
         /// Navigation reference
