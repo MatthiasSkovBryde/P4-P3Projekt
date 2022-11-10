@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="FileFolder\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

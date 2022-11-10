@@ -33,7 +33,10 @@
         <label for="zipcode"><b>ZipCode</b></label>
         <input type="text" placeholder="Enter ZipCode" name="zipcode" [(ngModel)]="customerRequest.zipCode">
         <i class="fa fa-map-marker" style="margin-left: -30px; cursor: pointer;"></i>
-
+        
+        <label for="address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Your Address" name="zipcode" [(ngModel)]="customerRequest.address">
+        <i class="fa fa-map-marker" style="margin-left: -30px; cursor: pointer;"></i>
 
         <button type="submit" (click)="submit()">signup</button>
     </form>

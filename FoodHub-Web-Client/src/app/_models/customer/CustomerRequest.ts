@@ -5,4 +5,5 @@ export interface CustomerRequest {
     lastName: string;
     phoneNumber: string;
     zipCode: string;
+    address: string;
 }

@@ -35,7 +35,8 @@ namespace FoodHub_Web_API.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(32)", nullable: false),
-                    ZipCode = table.Column<int>(type: "int", nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(4)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     Created_At = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
                     Modified_At = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
