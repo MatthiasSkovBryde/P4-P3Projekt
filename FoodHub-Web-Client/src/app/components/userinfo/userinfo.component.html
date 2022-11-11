@@ -1,6 +1,6 @@
 <div class="height ">
+    <div class="text" *ngFor="let DirectCustomerResponse of customers">
 
-<div class="container">
     <div class="main-body">
 
 
@@ -13,6 +13,7 @@
                                 class="rounded-circle" width="150">
                             <div class="mt-3">
                                 <h4>John Doe</h4>
+                                
                                 <p class="text-light  mb-1">Full Stack Developer</p>
                                 <p class="text-light  font-size-sm">Bay Area, San Francisco, CA</p>
                                
@@ -32,16 +33,18 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Full Name</h6>
+                                
+                                <h6 class="mb-0">firstName</h6>
                             </div>
-                            <div class="col-sm-9 text-white">
-                                Kenneth Valdez
+                            <div class="col-sm-9 text-black">
+                              
+                              <p>firstName: {{DirectCustomerResponse.firstName}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
+                                <h6 class="mb-0">lastName</h6>
                             </div>
                             <div class="col-sm-9 text-white">
                                 fip@jukmuh.al

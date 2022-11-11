@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FoodHub_Web_API.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,7 +36,6 @@ namespace FoodHub_Web_API.Migrations
                     LastName = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     ZipCode = table.Column<int>(type: "int", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     Created_At = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Modified_At = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
