@@ -10,3 +10,10 @@
     color: white;
     border-radius: .25rem;
 }
+input {
+    background-color: transparent;
+    color: white;
+    border: 0;
+    text-align: center;
+    width: 35%;
+}
