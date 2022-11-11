@@ -4,9 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-
 import { AuthenticationGuard } from './_services/authentication.guard.service'
-
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
 
 
@@ -18,7 +16,7 @@ const routes: Routes = [
   { path: 'product-list', component: ProductListComponent}, //product-list:id
   { path: 'login', component: LoginComponent },
   { path:'signup', component: SignupformComponent },
-  {path: 'profile', component:UserinfoComponent},
+  { path: 'profile', component: UserinfoComponent, canActivate: [AuthenticationGuard]},
   { path: '**', redirectTo: ''} // MUST BE LAST IN ARRAY!
 ];
 

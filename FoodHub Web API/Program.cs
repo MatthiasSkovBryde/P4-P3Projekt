@@ -5,6 +5,7 @@ builder.Services.AddTransient<ICustomerService, CustomerService>();
 builder.Services.AddTransient<ICustomerRepository, CustomerRepository>();
 
 builder.Services.AddTransient<IAccountRepository, AccountRepository>();
+builder.Services.AddTransient<IAccountService, AccountService>();
 
 builder.Services.AddTransient<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddTransient<IAuthenticationService, AuthenticationService>();
