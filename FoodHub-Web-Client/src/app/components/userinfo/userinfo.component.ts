@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/_services/customer.service';
-import { CustomerRequest, DirectCustomerResponse } from 'src/app/_models/customer';
-import { AccountRequest } from 'src/app/_models/account';
-
+import { DirectCustomerResponse } from 'src/app/_models/customer';
+import { AuthenticationService } from 'src/app/_services';
+import { JwtDecodePlus } from 'src/app/helpers/JWTDecodePlus';
 
 @Component({
   selector: 'app-userinfo',
@@ -10,30 +10,24 @@ import { AccountRequest } from 'src/app/_models/account';
   styleUrls: ['./userinfo.component.css']
 })
 export class UserinfoComponent implements OnInit {
-  public request: AccountRequest = { email: '', password: '' };
-  customers: DirectCustomerResponse[] = []
-  
-  customer:DirectCustomerResponse = {
+  public customer: DirectCustomerResponse = {
     customerID: 0,
     account: {
       accountID: 0,
-      email: ""
+      email: ''
     },
     firstName: '',
     lastName: '',
     phoneNumber: '',
-    zipCode: 0,
+    zipCode: '',
+    address: '',
     created_At: new Date()
-  }
+  };
 
-  
-  constructor(private customerService:CustomerService) { }
-
-
-
+  constructor(private customerService:CustomerService, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.customers.push(this.customer);
+   let customerId = JwtDecodePlus.jwtDecode(this.authService.AccessToken).nameid;
+   this.customerService.getById(customerId).subscribe(response => { this.customer = response; })
   }
-
 }

@@ -8,29 +8,27 @@ import { DirectCustomerResponse, StaticCustomerResponse, NewCustomerRequest } fr
     providedIn: 'root'
 })
 export class CustomerService {
+    private url: string = environment.ApiUrl + "/customer"
+
     constructor(private http: HttpClient) {}
 
-    private get customerUrl(): string {
-        return environment.ApiUrl + "/Customer";
-    }
-
     public getAll(): Observable<StaticCustomerResponse[]> {
-        return this.http.get<StaticCustomerResponse[]>(this.customerUrl)
+        return this.http.get<StaticCustomerResponse[]>(this.url)
     }
 
     public create(request: NewCustomerRequest): Observable<DirectCustomerResponse> {
-        return this.http.post<DirectCustomerResponse>(this.customerUrl, request);
+        return this.http.post<DirectCustomerResponse>(this.url, request);
     }
 
     public getById(customerId: number): Observable<DirectCustomerResponse> {
-        return this.http.get<DirectCustomerResponse>(`${this.customerUrl}/${customerId}`);
+        return this.http.get<DirectCustomerResponse>(`${this.url}/${customerId}`);
     }
 
     public update(customerId: number, request: NewCustomerRequest): Observable<DirectCustomerResponse> {
-        return this.http.put<DirectCustomerResponse>(`${this.customerUrl}/${customerId}`, request);
+        return this.http.put<DirectCustomerResponse>(`${this.url}/${customerId}`, request);
     }
 
     public delete(customerId: number): Observable<DirectCustomerResponse> {
-        return this.http.delete<DirectCustomerResponse>(`${this.customerUrl}/${customerId}`);
+        return this.http.delete<DirectCustomerResponse>(`${this.url}/${customerId}`);
     }
 }

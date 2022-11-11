@@ -59,6 +59,7 @@
         /// <returns></returns>
         [HttpGet]
         [Route("{customerId}")]
+        [Authorize]
         public async Task<IActionResult> GetById(int customerId)
         {
             try
@@ -109,6 +110,7 @@
         /// <returns></returns>
         [HttpPut]
         [Route("{customerId}")]
+        [Authorize]
         public async Task<IActionResult> Update(int customerId, NewCustomerRequest request)
         {
             try
