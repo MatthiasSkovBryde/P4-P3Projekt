@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import localeDk from '@angular/common/locales/en-DK';
 registerLocaleData(localeDk);
 import { RouterModule } from '@angular/router';
-
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,12 +12,14 @@ import { LoginComponent } from './components/login/login.component';
 import { appInitializer } from './helpers/app.initializer';
 import { AuthenticationService } from './_services/authentication.service';
 import { AuthenticationInterceptor } from './_interceptor/authentication.interceptor';
-import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
+import { CommonModule, HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -38,6 +39,9 @@ import { UserinfoComponent } from './components/userinfo/userinfo.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService]},

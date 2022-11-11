@@ -4,6 +4,7 @@ import { AccountRequest } from 'src/app/_models/account';
 import { AuthenticationRequest } from 'src/app/_models/authentication';
 import { CustomerRequest, NewCustomerRequest} from 'src/app/_models/customer';
 import { AuthenticationService, CustomerService } from 'src/app/_services';
+import { NotificationService } from 'src/app/_services/notification.service';
 
 @Component({
   selector: 'app-signupform',
@@ -16,7 +17,7 @@ export class SignupformComponent implements OnInit {
   
   private returnUrl: string = "";
   public accountRequest: AccountRequest = {email: '', password: '' };
-  public customerRequest: CustomerRequest = { accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: 0, customerID: 0 };
+  public customerRequest: CustomerRequest = { accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: '', customerID: 0, address: ''};
   private request: NewCustomerRequest = { account: this.accountRequest, customer: this.customerRequest };
   public passwordValidator: string = '';
   public isValid: boolean = false;
@@ -25,7 +26,8 @@ export class SignupformComponent implements OnInit {
     private router: Router, 
     private customerService: CustomerService,
     private route: ActivatedRoute,
-    private authenticationService: AuthenticationService ) { }
+    private authenticationService: AuthenticationService,
+    private notification: NotificationService ) { }
 
   viewpass() {
     this.visible = !this.visible;
@@ -42,13 +44,15 @@ export class SignupformComponent implements OnInit {
   }
 
   public validate(): Promise<boolean> {
-
     return new Promise<boolean>((resolve) => {
 
       if (this.accountRequest.password === this.passwordValidator) {
         resolve(true);
       }
-      resolve(false);
+      else {
+        this.notification.showError("Error","Password aren't the same");
+        resolve(false);
+      }
     })
   }
 
@@ -60,6 +64,7 @@ export class SignupformComponent implements OnInit {
             let loginRequest: AuthenticationRequest = { email: '', password: ''};
             loginRequest = Object.assign(loginRequest, this.request.account);
             this.authenticationService.authenticate(loginRequest).subscribe();
+            this.notification.showSuccess('Success','Account was created')
           },
           error: (err) => {
             console.error(Object.values(err.error.errors).join(', '));

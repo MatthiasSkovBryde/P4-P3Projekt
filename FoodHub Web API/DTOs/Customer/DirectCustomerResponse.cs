@@ -12,7 +12,9 @@
 
         public string PhoneNumber { get; set; } = string.Empty;
 
-        public int ZipCode { get; set; } = 0;
+        public string ZipCode { get; set; } = string.Empty;
+
+        public string Address { get; set; } = string.Empty;
 
         public DateTime Created_At { get; set; }
     }

@@ -6,4 +6,5 @@ export interface StaticCustomerResponse  {
     phoneNumber: string;
     zipCode: number;
     created_At: Date; 
+    address: string;
 } 
