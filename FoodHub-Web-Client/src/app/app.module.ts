@@ -31,7 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
     SignupformComponent,
     FooterComponent,
     ProductListComponent,
-    UserinfoComponent
+    UserinfoComponent,
   ],
   imports: [
     BrowserModule,
