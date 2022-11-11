@@ -7,7 +7,7 @@
         Task<DirectAccountResponse> Update(int accountId, AccountRequest request);
     }
 
-    public class AccountService
+    public class AccountService : IAccountService
     {
 
         private readonly IAccountRepository _accountRepository;

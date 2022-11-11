@@ -1,6 +1,6 @@
 ﻿namespace FoodHub_Web_API.Controllers
 {
-    [Route("api/[controller")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -37,7 +37,7 @@
         }
 
         [HttpGet]
-        [Route("{accountId")]
+        [Route("{accountId}")]
         public async Task<IActionResult> GetById(int accountId)
         {
             try
@@ -57,7 +57,7 @@
         }
 
         [HttpPut]
-        [Route("{accountId")]
+        [Route("{accountId}")]
         public async Task<IActionResult> Update(int accountId, AccountRequest request)
         {
             try
