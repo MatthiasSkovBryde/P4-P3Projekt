@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/_services/customer.service';
-import { CustomerRequest, DirectCustomerResponse } from 'src/app/_models/customer';
-import { AccountRequest } from 'src/app/_models/account';
+import { DirectCustomerResponse } from 'src/app/_models/customer';
 import { AuthenticationService } from 'src/app/_services';
-import { Router } from '@angular/router';
 import { JwtDecodePlus } from 'src/app/helpers/JWTDecodePlus';
 
 @Component({
