@@ -51,7 +51,7 @@ namespace FoodHub_Web_API.Helpers
                     new Claim(ClaimTypes.Email, account.Email.ToString()),
                     new Claim(ClaimTypes.GivenName, $"{account.Customer.FirstName} {account.Customer.LastName}"),
                 }),
-                Audience = "User",
+                Audience = "user",
                 IssuedAt = DateTime.UtcNow,
                 NotBefore = DateTime.UtcNow,
                 Expires = DateTime.UtcNow.AddHours(1),

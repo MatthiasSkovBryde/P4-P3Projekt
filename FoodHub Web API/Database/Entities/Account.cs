@@ -6,10 +6,10 @@
         public int AccountID { get; set; }
 
         [Column(TypeName = "nvarchar(64)")]
-        public string Password { get; set; }
+        public string Password { get; set; } = string.Empty;
 
         [Column(TypeName = "nvarchar(255)")]
-        public string Email { get; set; }
+        public string Email { get; set; } = string.Empty;
 
         [Column(TypeName = "datetime2")]
         public DateTime Created_At { get; set; }
@@ -21,7 +21,6 @@
         /// Navigation reference
         /// </summary>
         /// 
-
         public Customer Customer { get; set; }
 
         /// <summary>

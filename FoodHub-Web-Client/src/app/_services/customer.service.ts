@@ -8,7 +8,7 @@ import { DirectCustomerResponse, StaticCustomerResponse, NewCustomerRequest } fr
     providedIn: 'root'
 })
 export class CustomerService {
-    private url: string = environment.ApiUrl + "/customer"
+    private url: string = environment.ApiUrl + "/Customer"
 
     constructor(private http: HttpClient) {}
 
@@ -25,6 +25,7 @@ export class CustomerService {
     }
 
     public update(customerId: number, request: NewCustomerRequest): Observable<DirectCustomerResponse> {
+        console.log(`${this.url}/${customerId}`, request)
         return this.http.put<DirectCustomerResponse>(`${this.url}/${customerId}`, request);
     }
 

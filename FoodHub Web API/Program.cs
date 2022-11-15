@@ -82,6 +82,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors(builder => 
 {
     builder.SetIsOriginAllowed(option => true)
+    .WithOrigins("http://localhost4200")
     .AllowCredentials()
     .AllowAnyHeader()
     .AllowAnyMethod();
