@@ -20,6 +20,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     FooterComponent,
     ProductListComponent,
     UserinfoComponent,
+    ProductPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,12 +46,12 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot(),
   ],
   providers: [
-    { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService]},
-    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true},
-    { provide: LocationStrategy, useClass: HashLocationStrategy},
-    { provide: DEFAULT_CURRENCY_CODE, useValue: 'DKK'},
-    { provide: LOCALE_ID, useValue: 'en-DK'},
-    
+    { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AuthenticationService] },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'DKK' },
+    { provide: LOCALE_ID, useValue: 'en-DK' },
+
   ],
   bootstrap: [AppComponent],
 })
