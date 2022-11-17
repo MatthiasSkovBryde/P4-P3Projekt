@@ -53,6 +53,7 @@ export class UserinfoComponent implements OnInit {
       this.accountService.update(this.customer.customerID, accountRequest).subscribe( z => {
         this.customer.account = z;
       });
+
       this.notification.showSuccess('Success','Account was updated');
     }
     else {
