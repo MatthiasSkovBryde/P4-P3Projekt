@@ -5,7 +5,7 @@
         Task<List<StaticCustomerResponse>> GetAll();
         Task<DirectCustomerResponse> GetById(int customerId);
         Task<DirectCustomerResponse> Create(NewCustomerRequest request);
-        Task<DirectCustomerResponse> Update(int customerId, NewCustomerRequest request);
+        Task<DirectCustomerResponse> Update(int customerId, CustomerRequest request);
         Task<DirectCustomerResponse> Delete(int customerId);
     }
     
@@ -83,15 +83,9 @@
             return null;
         }
 
-        public async Task<DirectCustomerResponse> Update(int customerId, NewCustomerRequest request)
+        public async Task<DirectCustomerResponse> Update(int customerId, CustomerRequest request)
         {
-            Account account = await _accountRepository.Update(request.Customer.AccountID, _mapper.Map<Account>(request.Account));
-            if (account != null)
-            {
-                return null;
-            }
-
-            Customer customer = await _customerRepository.Update(customerId, _mapper.Map<Customer>(request.Customer));
+            Customer customer = await _customerRepository.Update(customerId, _mapper.Map<Customer>(request));
             if (customer != null)
             {
                 return _mapper.Map<DirectCustomerResponse>(customer);
