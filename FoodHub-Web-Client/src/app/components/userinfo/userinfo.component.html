@@ -1,99 +1,119 @@
 <div class="height">
     <div class="main-body">
+
         <div class="row gutters-sm" [ngClass] ="{'noselect' : allowEdit ? false : true}">
+
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                class="rounded-circle" width="150">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4> <input type="text" [(ngModel)]="customer.firstName"></h4>
-                                <p class="text-light  mb-1">Full Stack Developer</p>
-                                <p class="text-light  font-size-sm">Bay Area, San Francisco, CA</p>
+
+                                <h4>{{customer.firstName}} {{customer.lastName}}</h4>
+
+                                <p class="text-light mb-1">Full Stack Developer</p>
+                                <p class="text-light font-size-sm">{{customer.address}}, {{customer.zipCode}}</p>
+
                             </div>
                         </div>
                     </div>
+                    
                     <div class="card mt-3">
-                        <ul class="list-group list-group-flush">
-                        </ul>
+                        <ul class="list-group list-group-flush"></ul>
                     </div>
                 </div>
-                <div class="card mt-3">
-                    <ul class="list-group list-group-flush">
-                    </ul>
-                </div>
             </div>
+
             <div class="col-md-8">
                 <div class="card mb-3">
                     <div class="card-body">
+
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">firstName</h6>
+                                <h6 class="mb-0">Fornavn :</h6>
                             </div>
                             <div class="col-sm-9 text-white">
-                                <input type="text" [(ngModel)]='customer.firstName' [disabled]="allowEdit ? false : true">
+                                <input type="text" [(ngModel)]='customer.firstName'
+                                    [disabled]="allowEdit ? false : true">
                             </div>
                         </div>
+
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">lastName</h6>
+                                <h6 class="mb-0">Efternavn :</h6>
                             </div>
                             <div class="col-sm-9 text-white">
-                                <input type="text" [(ngModel)]='customer.lastName'  [disabled]="allowEdit ? false : true">
+                                <input type="text" [(ngModel)]='customer.lastName'
+                                    [disabled]="allowEdit ? false : true">
                             </div>
                         </div>
+
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Phone</h6>
+                                <h6 class="mb-0">Telefonnummer :</h6>
                             </div>
                             <div class="col-sm-9 text-white">
+
                                 <input type="text" [(ngModel)]='customer.phoneNumber'  [disabled]="allowEdit ? false : true">
                             </div>
                             
                             <hr>
-                        <div class="row">
+                            <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
+                                <h6 class="mb-0">Email :</h6>
                             </div>
                             <div class="col-sm-9 text-white">
                                 <input type="text" [(ngModel)]='customer.account.email'  [disabled]="allowEdit ? false : true">
+
                             </div>
+
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">zipCode</h6>
-                                </div>
-                                <div class="col-sm-9 text-white">
-                                    <input type="text" [(ngModel)]='customer.zipCode'  [disabled]="allowEdit ? false : true">
-                                </div>
-                            </div>
-                           
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Address</h6>
+
+                                    <h6 class="mb-0">Addresse :</h6>
+
                                 </div>
                                 <div class="col-sm-9 text-white">
                                     <input type="text" [(ngModel)]='customer.address'  [disabled]="allowEdit ? false : true">
                                 </div>
                             </div>
+
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">creation date</h6>
+
+                                    <h6 class="mb-0">Postnummer :</h6>
                                 </div>
                                 <div class="col-sm-9 text-white">
-                                    <input type="text" [(ngModel)]='customer.created_At' disabled>
+                                    <input type="text" [(ngModel)]='customer.zipCode'  [disabled]="allowEdit ? false : true">
+                                </div>
+
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Konto oprettet :</h6>
+
+                                </div>
+
+                                <div class="col-sm-9 text-white">
+                                    <p>{{customer.created_At | date:'dd/MM/yyyy'}}</p>
+                                    <!--<input type="text" [(ngModel)]='customer.created_At' disabled>-->
+
                                 </div>
                             </div>
+
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <button class="btn btn-info" (click)="edit()">Edit</button>
                                     <button class="btn btn-info" (click)="save()" [disabled]="allowEdit ? false : true" style="margin-left: 20px;">Save</button>
+
                                 </div>
                             </div>
                         </div>
@@ -102,4 +122,3 @@
             </div>
         </div>
     </div>
-</div>

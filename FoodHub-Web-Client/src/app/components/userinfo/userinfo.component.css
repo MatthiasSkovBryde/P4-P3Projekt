@@ -10,10 +10,18 @@
     color: white;
     border-radius: .25rem;
 }
+
 input {
     background-color: transparent;
     color: white;
     border: 0;
     text-align: center;
-    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.main-body {
+    overflow: hidden;
+    margin: 5%;
 }
