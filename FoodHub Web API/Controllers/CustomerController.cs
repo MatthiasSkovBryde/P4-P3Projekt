@@ -26,7 +26,6 @@
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -110,7 +109,7 @@
         /// <returns></returns>
         [HttpPut]
         [Route("{customerId}")]
-        public async Task<IActionResult> Update(int customerId, NewCustomerRequest request)
+        public async Task<IActionResult> Update(int customerId, CustomerRequest request)
         {
             try
             {

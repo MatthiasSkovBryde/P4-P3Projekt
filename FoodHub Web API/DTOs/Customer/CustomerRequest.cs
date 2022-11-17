@@ -2,23 +2,23 @@
 {
     public class CustomerRequest
     {
-        [Required(ErrorMessage = "* is required")]
-        public int AccountID { get; set; }
+        [Required(ErrorMessage = "* AccountID is required")]
+        public int? AccountID { get; set; }
 
-        [Required(ErrorMessage = "* is required")]
+        [Required(ErrorMessage = "* FirstName is required")]
         public string FirstName { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "* is required")]
+        [Required(ErrorMessage = "* LastName is required")]
         public string LastName { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "* is required")]
+        [Required(ErrorMessage = "* PhoneNumber is required")]
         [StringLength(8, MinimumLength = 8, ErrorMessage = "* must be 8 characters")]
         public string PhoneNumber { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "* is required")]
-        public int ZipCode { get; set; }
+        [Required(ErrorMessage = "* ZipCode is required")]
+        public string ZipCode { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "* is required")]
-        public string Gender { get; set; } = string.Empty;
+        [Required(ErrorMessage = "* Address is required")]
+        public string Address { get; set; } = string.Empty;
     }
 }

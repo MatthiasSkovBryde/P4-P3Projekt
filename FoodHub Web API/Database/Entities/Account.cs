@@ -20,6 +20,7 @@
         /// <summary>
         /// Navigation reference
         /// </summary>
+        /// 
         public Customer Customer { get; set; }
 
         /// <summary>

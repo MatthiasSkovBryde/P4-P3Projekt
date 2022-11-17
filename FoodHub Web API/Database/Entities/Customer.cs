@@ -16,19 +16,19 @@
         public Account Account { get; set; }
 
         [Column(TypeName = "nvarchar(32)")]
-        public string FirstName { get; set; } = string.Empty;
+        public string FirstName { get; set; }
 
         [Column(TypeName = "nvarchar(32)")]
-        public string LastName { get; set; } = string.Empty;
+        public string LastName { get; set; }
 
         [Column(TypeName = "nvarchar(32)")]
-        public string PhoneNumber { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; }
 
-        [Column(TypeName = "int")]
-        public int ZipCode { get; set; } = 0;
+        [Column(TypeName = "nvarchar(4)")]
+        public string ZipCode { get; set; }
 
         [Column(TypeName = "nvarchar(32)")]
-        public string Gender { get; set; } = string.Empty;
+        public string Address { get; set; }
 
         /// <summary>
         /// Navigation reference

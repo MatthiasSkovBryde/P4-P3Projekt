@@ -17,7 +17,7 @@ namespace FoodHub_Web_API.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Password = table.Column<string>(type: "nvarchar(64)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(255)", nullable: false),
-                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
                     Modified_At = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -35,9 +35,9 @@ namespace FoodHub_Web_API.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(32)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(32)", nullable: false),
-                    ZipCode = table.Column<int>(type: "int", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(32)", nullable: false),
-                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ZipCode = table.Column<string>(type: "nvarchar(4)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(32)", nullable: false),
+                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
                     Modified_At = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -51,17 +51,62 @@ namespace FoodHub_Web_API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "RefreshToken",
+                columns: table => new
+                {
+                    RefreshTokenID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Token = table.Column<string>(type: "nvarchar(255)", nullable: false),
+                    Expires_At = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Created_At = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "getdate()"),
+                    CreatedByIp = table.Column<string>(type: "nvarchar(16)", nullable: false),
+                    Revoked_At = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    RevokedByIp = table.Column<string>(type: "nvarchar(16)", nullable: false),
+                    ReplacedByToken = table.Column<string>(type: "nvarchar(255)", nullable: false),
+                    AccountID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RefreshToken", x => x.RefreshTokenID);
+                    table.ForeignKey(
+                        name: "FK_RefreshToken_Account_AccountID",
+                        column: x => x.AccountID,
+                        principalTable: "Account",
+                        principalColumn: "AccountID");
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Account_Email",
+                table: "Account",
+                column: "Email",
+                unique: true);
+
             migrationBuilder.CreateIndex(
                 name: "IX_Customer_AccountID",
                 table: "Customer",
                 column: "AccountID",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Customer_PhoneNumber",
+                table: "Customer",
+                column: "PhoneNumber",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RefreshToken_AccountID",
+                table: "RefreshToken",
+                column: "AccountID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Customer");
+
+            migrationBuilder.DropTable(
+                name: "RefreshToken");
 
             migrationBuilder.DropTable(
                 name: "Account");

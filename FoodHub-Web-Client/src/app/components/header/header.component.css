@@ -5,3 +5,10 @@
 .user {
     color: white;
 }
+.logoutbutton{
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    text-transform: uppercase;
+}

@@ -6,7 +6,7 @@ export interface DirectCustomerResponse {
     firstName: string;
     lastName: string;
     phoneNumber: string;
-    zipCode: number;
-    gender: string;
+    zipCode: string;
     created_At: Date;
+    address: string;
 }
