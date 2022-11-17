@@ -9,7 +9,8 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
-                                <h4> <input type="text" [(ngModel)]="customer.firstName"></h4>
+
+                                <h4>{{customer.firstName}} {{customer.lastName}}</h4>
 
                                 <p class="text-light mb-1">Full Stack Developer</p>
                                 <p class="text-light font-size-sm">{{customer.address}}, {{customer.zipCode}}</p>
@@ -73,27 +74,22 @@
                             <div class="row">
                                 <div class="col-sm-3">
 
+                                    <h6 class="mb-0">Addresse :</h6>
+
+                                </div>
+                                <div class="col-sm-9 text-white">
+                                    <input type="text" [(ngModel)]='customer.address'  [disabled]="allowEdit ? false : true">
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+
                                     <h6 class="mb-0">Postnummer :</h6>
                                 </div>
                                 <div class="col-sm-9 text-white">
                                     <input type="text" [(ngModel)]='customer.zipCode'  [disabled]="allowEdit ? false : true">
-                                </div>
-                            </div>
-                           
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Addresse :</h6>
-        </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">zipCode</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-white">
-                                        <input type="text" [(ngModel)]='customer.zipCode'
-                                            [disabled]="allowEdit ? false : true">
-                                    </div>
                                 </div>
 
                             </div>
@@ -104,14 +100,11 @@
                                     <h6 class="mb-0">Konto oprettet :</h6>
 
                                 </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">creation date</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-white">
-                                        <input type="text" [(ngModel)]='customer.created_At' disabled>
-                                    </div>
+
+                                <div class="col-sm-9 text-white">
+                                    <p>{{customer.created_At | date:'dd/MM/yyyy'}}</p>
+                                    <!--<input type="text" [(ngModel)]='customer.created_At' disabled>-->
+
                                 </div>
                             </div>
 
