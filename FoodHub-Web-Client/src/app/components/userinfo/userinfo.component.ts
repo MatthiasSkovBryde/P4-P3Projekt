@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from 'src/app/_services/customer.service';
-import { CustomerRequest, DirectCustomerResponse, NewCustomerRequest } from 'src/app/_models/customer';
+import { CustomerRequest, DirectCustomerResponse } from 'src/app/_models/customer';
 import { AuthenticationService } from 'src/app/_services';
 import { JwtDecodePlus } from 'src/app/helpers/JWTDecodePlus';
-import { AccountRequest } from 'src/app/_models/account';
 import { NotificationService } from 'src/app/_services/notification.service';
 
 @Component({
@@ -19,6 +18,7 @@ export class UserinfoComponent implements OnInit {
   public customerRequest: CustomerRequest = { accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: '', customerID: 0, address: ''};
 
   constructor(private customerService: CustomerService, private authService: AuthenticationService, private notification: NotificationService) { }
+
 
   ngOnInit(): void {
     let customerId = JwtDecodePlus.jwtDecode(this.authService.AccessToken).nameid;
@@ -49,7 +49,7 @@ export class UserinfoComponent implements OnInit {
       this.notification.showError('Error', 'Blev ikke gemt!');
     }
   }
-
+  
   public edit(): void {
     if (!this.allowEdit) {
       this.allowEdit = true;
