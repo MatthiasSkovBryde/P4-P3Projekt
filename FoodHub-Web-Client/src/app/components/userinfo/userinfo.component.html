@@ -1,6 +1,6 @@
-<div class="height ">
+<div class="height">
     <div class="main-body">
-        <div class="row gutters-sm">
+        <div class="row gutters-sm" [ngClass] ="{'noselect' : allowEdit ? false : true}">
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-body">
@@ -32,7 +32,7 @@
                                 <h6 class="mb-0">firstName</h6>
                             </div>
                             <div class="col-sm-9 text-white">
-                                <input type="text" [(ngModel)]="customer.firstName">
+                                <input type="text" [(ngModel)]='customer.firstName' [disabled]="allowEdit ? false : true">
                             </div>
                         </div>
                         <hr>
@@ -41,7 +41,7 @@
                                 <h6 class="mb-0">lastName</h6>
                             </div>
                             <div class="col-sm-9 text-white">
-                                <input type="text" [(ngModel)]="customer.lastName">
+                                <input type="text" [(ngModel)]='customer.lastName'  [disabled]="allowEdit ? false : true">
                             </div>
                         </div>
                         <hr>
@@ -50,7 +50,7 @@
                                 <h6 class="mb-0">Phone</h6>
                             </div>
                             <div class="col-sm-9 text-white">
-                                <input type="text" [(ngModel)]="customer.phoneNumber">
+                                <input type="text" [(ngModel)]='customer.phoneNumber'  [disabled]="allowEdit ? false : true">
                             </div>
                             
                             <hr>
@@ -59,7 +59,7 @@
                                 <h6 class="mb-0">Email</h6>
                             </div>
                             <div class="col-sm-9 text-white">
-                                <input type="text" [(ngModel)]="customer.account.email">
+                                <input type="text" [(ngModel)]='customer.account.email'  [disabled]="allowEdit ? false : true">
                             </div>
                             <hr>
                             <div class="row">
@@ -67,7 +67,7 @@
                                     <h6 class="mb-0">zipCode</h6>
                                 </div>
                                 <div class="col-sm-9 text-white">
-                                    <input type="text" [(ngModel)]="customer.zipCode">
+                                    <input type="text" [(ngModel)]='customer.zipCode'  [disabled]="allowEdit ? false : true">
                                 </div>
                             </div>
                            
@@ -77,7 +77,7 @@
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-white">
-                                    <input type="text" [(ngModel)]="customer.address">
+                                    <input type="text" [(ngModel)]='customer.address'  [disabled]="allowEdit ? false : true">
                                 </div>
                             </div>
                             <hr>
@@ -86,13 +86,14 @@
                                     <h6 class="mb-0">creation date</h6>
                                 </div>
                                 <div class="col-sm-9 text-white">
-                                    <input type="text" [(ngModel)]="customer.created_At">
+                                    <input type="text" [(ngModel)]='customer.created_At' disabled>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <a class="btn btn-info " >Edit</a>
+                                    <button class="btn btn-info" (click)="edit()">Edit</button>
+                                    <button class="btn btn-info" (click)="save()" [disabled]="allowEdit ? false : true" style="margin-left: 20px;">Save</button>
                                 </div>
                             </div>
                         </div>

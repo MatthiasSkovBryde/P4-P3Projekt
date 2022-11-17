@@ -7,24 +7,20 @@
             <div class="d-flex flex-row gap-1 text-center align-items-center h-100 m-1">
                 <a routerLink="product-list" class="flex-grow-1 text-decoration-none fs-4 text-white">MENU</a>
                 <a routerLink="" class="flex-grow-1 text-decoration-none fs-4 text-white">FIND BUTIK</a>
-                <a routerLink="profile" class="flex-grow-1 text-decoration-none fs-4 text-white">TILBUD</a>
+                <a routerLink="" class="flex-grow-1 text-decoration-none fs-4 text-white">TILBUD</a>
                 <a routerLink="/signup" class="flex-grow-1 text-decoration-none fs-4 text-white">FIND JOB</a>
             </div>
         </div>
 
         <div class="offset-1 col-2" [ngSwitch]="loggedIn">
             <div class="d-flex flex-row gap-1 text-center align-items-center h-100 m-1">
-                <a routerLink="login" class="text-decoration-none fs-5 text-white" *ngSwitchCase="true">MIN KONTO <i
-                        class="fa-regular fa-user user"></i></a>
-                <a routerLink="login" class="text-decoration-none fs-5 text-white text-uppercase"
-                    *ngSwitchCase="false">Login</a>
-                <button (click)="logud()" class="text-decoration-none fs-5 text-white" class="logoutbutton"
-                    *ngSwitchCase="true"> logud</button>
 
+                <a routerLink="login" class="text-decoration-none fs-5 text-white text-uppercase" *ngSwitchCase="false">Login</a>
+                
+                <a routerLink="profile" class="text-decoration-none fs-5 text-white" *ngSwitchCase="true">MIN KONTO <i class="fa-regular fa-user user"></i></a>
+
+                <button (click)="logud()" class="text-decoration-none fs-5 text-white" class="logoutbutton" *ngSwitchCase="true"> logud</button>
             </div>
-        </div>
-        <div>
-
         </div>
     </div>
 </div>

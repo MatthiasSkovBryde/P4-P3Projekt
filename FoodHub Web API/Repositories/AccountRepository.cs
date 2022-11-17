@@ -56,7 +56,7 @@
             Account account = await GetById(accountId);
             if (account != null)
             {
-                requset.Password = BC.HashPassword(requset.Password);
+                //requset.Password = BC.HashPassword(requset.Password);
                 account.Email = requset.Email;
                 account.Modified_At = DateTime.UtcNow;
 

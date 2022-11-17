@@ -8,9 +8,7 @@ import { AuthenticationGuard } from './_services/authentication.guard.service'
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 
-
-
-// Tilføj " , canActivate: [AuthenticationGuard] " hvis man skal vræe logget ind for at tilgå componentet.
+// Tilføj " , canActivate: [AuthenticationGuard]} " hvis man skal vræe logget ind for at tilgå componentet.
 // Fx { path: 'product-list', component: ProductListComponent, canActivate: [AuthenticationGuard]}
 const routes: Routes = [
   { path: '', component: HomeComponent },
