@@ -15,15 +15,20 @@ import { NotificationService } from 'src/app/_services/notification.service';
 export class UserinfoComponent implements OnInit {
   public allowEdit: boolean = false;
 
-  customer: DirectCustomerResponse = {customerID: 0, account:{ accountID: 0, email: ''}, firstName: '', lastName: '', phoneNumber: '', zipCode: '', address: '', created_At: new Date()};
-  customerRequest: CustomerRequest = {customerID: 0, accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: '', address: ''};
+  customer: DirectCustomerResponse = {customerID: 0, account:{ accountID: 0, email: ''}, firstName: '', lastName: '', phoneNumber: '', zipCode: '', created_At: new Date(), address: ''};
+  public customerRequest: CustomerRequest = { accountID: 0, firstName: '', lastName: '', phoneNumber: '', zipCode: '', customerID: 0, address: ''};
 
-  constructor(private customerService:CustomerService, private authService: AuthenticationService, private notification: NotificationService) { }
+  constructor(private customerService: CustomerService, private authService: AuthenticationService, private notification: NotificationService) { }
+
+  ngOnInit(): void {
+    let customerId = JwtDecodePlus.jwtDecode(this.authService.AccessToken).nameid;
+    this.customerService.getById(customerId).subscribe(response => { this.customer = response; })
+  }
 
   public save(): void {
     if (confirm('Er du sikker på at du vil gemme oplysningerne?')) {
 
-      this.customerRequest = {
+      let request: CustomerRequest = {
         customerID: this.customer.customerID,
         accountID: this.customer.account.accountID,
         firstName: this.customer.firstName,
@@ -31,16 +36,6 @@ export class UserinfoComponent implements OnInit {
         phoneNumber: this.customer.phoneNumber,
         zipCode: this.customer.zipCode,
         address: this.customer.address
-      };
-
-      let accountRequest: AccountRequest = {
-        email: this.customer.account.email,
-        password: 'NONE'
-      };
-
-      let request: NewCustomerRequest = {
-        account: accountRequest,
-        customer: this.customerRequest
       }
 
       this.customerService.update(this.customer.customerID, request).subscribe( x => {
@@ -60,9 +55,4 @@ export class UserinfoComponent implements OnInit {
       this.allowEdit = true;
     }
   }
-
-  ngOnInit(): void {
-    let customerId = JwtDecodePlus.jwtDecode(this.authService.AccessToken).nameid;
-    this.customerService.getById(customerId).subscribe(response => { this.customer = response; })
-   }
 }

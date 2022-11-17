@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from 'rxjs';
 import { environment } from "src/environments/environment";
-import { DirectCustomerResponse, StaticCustomerResponse, NewCustomerRequest } from "../_models/customer";
+import { DirectCustomerResponse, StaticCustomerResponse, NewCustomerRequest, CustomerRequest } from "../_models/customer";
 
 @Injectable({
     providedIn: 'root'
@@ -24,7 +24,7 @@ export class CustomerService {
         return this.http.get<DirectCustomerResponse>(`${this.url}/${customerId}`);
     }
 
-    public update(customerId: number, request: NewCustomerRequest): Observable<DirectCustomerResponse> {
+    public update(customerId: number, request: CustomerRequest): Observable<DirectCustomerResponse> {
         console.log(`${this.url}/${customerId}`, request)
         return this.http.put<DirectCustomerResponse>(`${this.url}/${customerId}`, request);
     }
