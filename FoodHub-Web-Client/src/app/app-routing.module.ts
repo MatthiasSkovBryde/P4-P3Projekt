@@ -6,18 +6,18 @@ import { SignupformComponent } from './components/signupform/signupform.componen
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { AuthenticationGuard } from './_services/authentication.guard.service'
 import { UserinfoComponent } from './components/userinfo/userinfo.component';
+import { ProductPageComponent } from './components/product-page/product-page.component';
 
-
-
-// Tilføj " , canActivate: [AuthenticationGuard] " hvis man skal vræe logget ind for at tilgå componentet.
+// Tilføj " , canActivate: [AuthenticationGuard]} " hvis man skal vræe logget ind for at tilgå componentet.
 // Fx { path: 'product-list', component: ProductListComponent, canActivate: [AuthenticationGuard]}
-const routes: Routes = [ 
+const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'product-list', component: ProductListComponent}, //product-list:id
+  { path: 'product-list', component: ProductListComponent }, //product-list:id
+  { path: 'product-page', component: ProductPageComponent },
   { path: 'login', component: LoginComponent },
-  { path:'signup', component: SignupformComponent },
-  { path: 'profile', component: UserinfoComponent, canActivate: [AuthenticationGuard]},
-  { path: '**', redirectTo: ''} // MUST BE LAST IN ARRAY!
+  { path: 'signup', component: SignupformComponent },
+  { path: 'profile', component: UserinfoComponent, canActivate: [AuthenticationGuard] },
+  { path: '**', redirectTo: '' } // MUST BE LAST IN ARRAY!
 ];
 
 @NgModule({

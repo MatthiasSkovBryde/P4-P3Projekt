@@ -3,7 +3,7 @@
     /// <summary>
     /// Using AuthenticationController to authenticate.
     /// </summary>
-    [Route("Api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AuthenticationController : ControllerBase
     {

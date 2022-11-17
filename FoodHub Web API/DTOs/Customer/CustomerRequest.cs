@@ -3,7 +3,7 @@
     public class CustomerRequest
     {
         [Required(ErrorMessage = "* AccountID is required")]
-        public int AccountID { get; set; }
+        public int? AccountID { get; set; }
 
         [Required(ErrorMessage = "* FirstName is required")]
         public string FirstName { get; set; } = string.Empty;
