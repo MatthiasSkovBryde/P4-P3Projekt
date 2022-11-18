@@ -4,7 +4,7 @@ export interface StaticCustomerResponse  {
     firstName: string;
     lastName: string;
     phoneNumber: string;
-    zipCode: number;
+    zipCode: string;
     created_At: Date; 
     address: string;
 } 
