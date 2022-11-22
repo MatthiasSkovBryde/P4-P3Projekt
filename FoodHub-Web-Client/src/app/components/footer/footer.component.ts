@@ -18,4 +18,8 @@ export class FooterComponent implements OnInit {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
+
+  goToWeb() {
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+  }
 }

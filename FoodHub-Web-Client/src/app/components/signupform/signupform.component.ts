@@ -45,7 +45,6 @@ export class SignupformComponent implements OnInit {
 
   public validate(): Promise<boolean> {
     return new Promise<boolean>((resolve) => {
-
       if (this.accountRequest.password === this.passwordValidator) {
         resolve(true);
       }

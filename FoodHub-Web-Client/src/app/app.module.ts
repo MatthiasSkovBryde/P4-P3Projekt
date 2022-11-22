@@ -21,6 +21,7 @@ import { UserinfoComponent } from './components/userinfo/userinfo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductPageComponent } from './components/product-page/product-page.component';
+import { FindButikComponent } from './components/find-butik/find-butik.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ProductPageComponent } from './components/product-page/product-page.com
     ProductListComponent,
     UserinfoComponent,
     ProductPageComponent,
+    FindButikComponent,
   ],
   imports: [
     BrowserModule,
