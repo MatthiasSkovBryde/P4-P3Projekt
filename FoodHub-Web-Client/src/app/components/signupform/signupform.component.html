@@ -14,21 +14,20 @@
         <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password"  [(ngModel)]="passwordValidator">
         <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"></i></span>
 
-        <label for="firstname"><b>FirstName</b></label>
+        <label for="firstname"><b>Fornavn</b></label>
+        <input type="text" placeholder="Fornavn" name="firstname" [(ngModel)]="customerRequest.firstName"><i class='fas fa-user-alt'></i>
 
-        <input type="text" placeholder="Enter First name" name="firstname" [(ngModel)]="customerRequest.firstName"><i class='fas fa-user-alt'></i>
+        <label for="lastname"><b>Efternavn</b></label>
+        <input type="text" placeholder="Efternavn" name="lastname" [(ngModel)]="customerRequest.lastName"><i class='fas fa-user-alt'></i>
 
-        <label for="lastname"><b>LastName</b></label>
-        <input type="text" placeholder="Enter LastName" name="lastname" [(ngModel)]="customerRequest.lastName"><i class='fas fa-user-alt'></i>
+        <label for="phonenr"><b>Telefonnummer</b></label>
+        <input type="text" placeholder="Telefonnummer" name="phonenr" [(ngModel)]="customerRequest.phoneNumber"><i class="fa fa-phone"></i>
 
-        <label for="phonenr"><b>PhoneNumber</b></label>
-        <input type="text" placeholder="Enter PhoneNumber" name="phonenr" [(ngModel)]="customerRequest.phoneNumber"><i class="fa fa-phone"></i>
-
-        <label for="zipcode"><b>ZipCode</b></label>
-        <input type="text" placeholder="Enter ZipCode" name="zipcode" [(ngModel)]="customerRequest.zipCode"><i class="fa fa-map-marker"></i>
+        <label for="zipcode"><b>Postkode</b></label>
+        <input type="text" placeholder="Postkode" name="zipcode" [(ngModel)]="customerRequest.zipCode"><i class="fa fa-map-marker"></i>
         
-        <label for="address"><b>Address</b></label>
-        <input type="text" placeholder="Enter Your Address" name="address" [(ngModel)]="customerRequest.address"><i class="fa fa-map-marker"></i>
+        <label for="address"><b>Addresse</b></label>
+        <input type="text" placeholder="Addresse" name="address" [(ngModel)]="customerRequest.address"><i class="fa fa-map-marker"></i>
 
 
         <button type="submit" class="btn btn-primary" (click)="submit()">signup</button>
