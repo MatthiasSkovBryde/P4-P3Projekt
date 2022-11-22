@@ -71,7 +71,7 @@ export class UserinfoComponent implements OnInit {
     this.pressed ++;
     if (this.pressed >= 10) {
       window.open('https://www.tec.dk');
-      if (this.pressed <= 10) {
+      if (this.pressed < 10) {
         window.location.reload();
       }
     }
