@@ -16,7 +16,6 @@ input {
     color: white;
     border: 0;
     text-align: center;
-
     display: flex;
     flex-direction: row;
 }
