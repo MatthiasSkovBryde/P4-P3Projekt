@@ -1,6 +1,5 @@
 <div class="height">
   <div class="container">
-
     <h1>login</h1>
     <form>
       <label for="email"><b>Email</b></label>
@@ -13,10 +12,9 @@
       <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required [(ngModel)]="request.password">
       <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'" style="margin-left: -30px; cursor: pointer; color: black;"></i></span>
 
-      <a routerLink="/signup" class="text-capitalize text-white"> har du ikke en konto </a>
+      <a routerLink="/signup" class="text-white" style="text-decoration: none">Har du ikke en konto?</a>
       
-      <button type="submit" (click)="login()">Login</button>
-
+      <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
     </form>
   </div>
 </div>

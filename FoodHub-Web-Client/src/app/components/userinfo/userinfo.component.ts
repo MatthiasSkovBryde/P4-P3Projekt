@@ -4,7 +4,7 @@ import { CustomerRequest, DirectCustomerResponse } from 'src/app/_models/custome
 import { AccountService, AuthenticationService } from 'src/app/_services';
 import { JwtDecodePlus } from 'src/app/helpers/JWTDecodePlus';
 import { NotificationService } from 'src/app/_services/notification.service';
-import { AccountRequest } from 'src/app/_models/account';
+import { AccountRequest, DirectAccountResponse } from 'src/app/_models/account';
 
 @Component({
   selector: 'app-userinfo',
@@ -46,14 +46,13 @@ export class UserinfoComponent implements OnInit {
 
       this.customerService.update(this.customer.customerID, request).subscribe( x => {
         this.customer = x;
-
-        this.allowEdit = false;
       });
 
-      this.accountService.update(this.customer.customerID, accountRequest).subscribe( z => {
+      this.accountService.update(this.customer.account.accountID, accountRequest).subscribe( z => {
         this.customer.account = z;
       });
-
+      
+      this.allowEdit = false;
       this.notification.showSuccess('Success','Account was updated');
     }
     else {
@@ -64,6 +63,17 @@ export class UserinfoComponent implements OnInit {
   public edit(): void {
     if (!this.allowEdit) {
       this.allowEdit = true;
+    }
+  }
+
+  public pressed: number = 0;
+  public egg(): void {
+    this.pressed ++;
+    if (this.pressed >= 10) {
+      window.open('https://www.tec.dk');
+      if (this.pressed <= 10) {
+        window.location.reload();
+      }
     }
   }
 }
