@@ -4,7 +4,7 @@ import { CustomerRequest, DirectCustomerResponse } from 'src/app/_models/custome
 import { AccountService, AuthenticationService } from 'src/app/_services';
 import { JwtDecodePlus } from 'src/app/helpers/JWTDecodePlus';
 import { NotificationService } from 'src/app/_services/notification.service';
-import { AccountRequest, DirectAccountResponse } from 'src/app/_models/account';
+import { AccountRequest } from 'src/app/_models/account';
 
 @Component({
   selector: 'app-userinfo',
