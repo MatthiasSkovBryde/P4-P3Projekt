@@ -2,9 +2,7 @@
     <h1>signup</h1>
     <form>
         <label for="email"><b>Email</b></label>
-
         <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="accountRequest.email"><i class="fa fa-envelope"></i>
-
 
         <label for="psw"><b>Password</b></label>
         <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" [(ngModel)]="accountRequest.password">
@@ -28,7 +26,6 @@
         
         <label for="address"><b>Addresse</b></label>
         <input type="text" placeholder="Addresse" name="address" [(ngModel)]="customerRequest.address"><i class="fa fa-map-marker"></i>
-
 
         <button type="submit" class="btn btn-primary" (click)="submit()">signup</button>
     </form>

@@ -69,9 +69,11 @@ export class UserinfoComponent implements OnInit {
   public pressed: number = 0;
   public egg(): void {
     this.pressed ++;
-    console.log(this.pressed);
     if (this.pressed >= 10) {
       window.open('https://www.tec.dk');
+      if (this.pressed <= 10) {
+        window.location.reload();
+      }
     }
   }
 }
