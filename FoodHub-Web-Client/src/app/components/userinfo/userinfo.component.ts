@@ -71,7 +71,7 @@ export class UserinfoComponent implements OnInit {
     this.pressed ++;
     console.log(this.pressed);
     if (this.pressed >= 10) {
-      window.open('https://www.tec.dk');
+      window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     }
   }
 }
