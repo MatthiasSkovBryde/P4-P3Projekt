@@ -25,23 +25,15 @@ global using Microsoft.AspNetCore.Authorization;
 global using System.Text.Json.Serialization;
 global using System.ComponentModel;
 global using System.IdentityModel.Tokens.Jwt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+global using Microsoft.AspNetCore.Http;
+global using FoodHub_Web_API.DTOs.Product;
+global using FoodHub_Web_API.DTOs.Manufacturer;
+global using FoodHub_Web_API.DTOs.Category;
+global using FoodHub_Web_API.DTOs.Photo;
+global using FoodHub_Web_API.DTOs.ProductType;
+global using FoodHub_Web_API.DTOs.Discount;
+global using FoodHub_Web_API.DTOs.Transaction;
+global using FoodHub_Web_API.DTOs.Order;
 
 
 
