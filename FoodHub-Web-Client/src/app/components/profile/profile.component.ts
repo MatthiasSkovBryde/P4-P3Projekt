@@ -7,12 +7,11 @@ import { NotificationService } from 'src/app/_services/notification.service';
 import { AccountRequest } from 'src/app/_models/account';
 
 @Component({
-  selector: 'app-userinfo',
-  templateUrl: './userinfo.component.html',
-  styleUrls: ['./userinfo.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-
-export class UserinfoComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   public allowEdit: boolean = false;
 
   customer: DirectCustomerResponse = {customerID: 0, account:{ accountID: 0, email: ''}, firstName: '', lastName: '', phoneNumber: '', zipCode: '', created_At: new Date(), address: ''};
@@ -76,4 +75,5 @@ export class UserinfoComponent implements OnInit {
       }
     }
   }
+
 }
