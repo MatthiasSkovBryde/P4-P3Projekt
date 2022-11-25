@@ -25,6 +25,7 @@ export class CustomerService {
     }
 
     public update(customerId: number, request: CustomerRequest): Observable<DirectCustomerResponse> {
+        console.log(this.url, customerId, request);
         return this.http.put<DirectCustomerResponse>(`${this.url}/${customerId}`, request);
     }
 

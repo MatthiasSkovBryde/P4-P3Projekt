@@ -22,6 +22,7 @@ export class AccountService {
   }
 
   public update(accountId: number, request: AccountRequest): Observable<DirectAccountResponse> {
+    console.log(this.url, accountId, request);
     return this.http.put<DirectAccountResponse>(`${this.url}/${accountId}`, request);
   }
 
