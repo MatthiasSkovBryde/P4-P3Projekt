@@ -1,20 +1,16 @@
-
 .container {
-    width: 360px;
+    width: 430px;
     height: cover;
     margin: auto;
-    border-radius: 3px;
     color: white;
-    background: linear-gradient(90deg, rgba(6,0,122,1) 0%, rgba(0,0,223,1) 35%, rgba(9,0,182,1) 100%);
-    border: 1px solid black;
-    text-transform: capitalize;
+    background-color: rgba(42, 42, 42, 1);
+    border-radius: 10px;
 }
 
 form input {
     width: 100%;
     padding: 7px;
     border: none;
-    border: 1px solid gray;
     border-radius: 6px;
     outline: none;
     background-color: white;
@@ -24,7 +20,7 @@ input[type=text],
 input[type=password] {
     width: 320px;
     height: 35px;
-    margin-top: 20px;
+    margin-bottom: 5px;
     border: 2px solid black;
     font-size: 18px;
 }
@@ -47,3 +43,11 @@ button {
     background-color:#0d6efd;
 }
 
+i {
+    margin-left: -25px; 
+    color: black;
+}
+
+.pwd{
+    cursor: pointer;
+}

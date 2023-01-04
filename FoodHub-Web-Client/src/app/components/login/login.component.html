@@ -1,3 +1,4 @@
+<!--
 <div class="height">
   <div class="container">
     <h1>login</h1>
@@ -17,6 +18,32 @@
       <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
     </form>
   </div>
+</div>
+-->
+
+<div class="height">
+  <form class="container row">
+    <h1 class="text-center mt-2">Login</h1>
+    <div class="row g-2">
+
+      <div class="col-12">
+        <label for="email" class="form-label noselect">Email</label>
+        <input type="text" placeholder="Enter Email" name="Email" required [(ngModel)]="request.email">
+        <i class="fa fa-envelope"></i>
+      </div>
+
+      <div class="col-12">
+        <label for="pwd" class="form-label noselect">Password</label>
+        <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password" required [(ngModel)]="request.password">
+        <span class="eyeicon pwd" (click)="viewpass()"><i class="pwd" [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"></i></span>
+      </div>
+
+      <a routerLink="/signup" class="text-white" style="text-decoration: none">Har du ikke en konto?</a>
+      
+      <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+
+    </div>
+  </form>
 </div>
 
 

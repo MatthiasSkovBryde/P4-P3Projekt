@@ -1,3 +1,4 @@
+/*
 .card {
     position: relative;
     display: flex;
@@ -25,3 +26,53 @@ input {
     overflow: hidden;
     margin: 5%;
 }
+*/
+
+.container {
+    width: 1000px;
+    height: cover;
+    margin: auto;
+    color: white;
+    background-color: rgba(42, 42, 42, 1);
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+form input, p, h4 {
+    width: 90%;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border-bottom: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+input[type=text] {
+    width: 320px;
+    height: 35px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+label{
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+button {
+    color: white;
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#0d6efd;
+}
+
+
