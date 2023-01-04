@@ -5,7 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { AuthenticationGuard } from './_services/authentication.guard.service'
-import { UserinfoComponent } from './components/userinfo/userinfo.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { ProductPageComponent } from './components/product-page/product-page.component';
 import { FindButikComponent } from './components/find-butik/find-butik.component';
 
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'product-page', component: ProductPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupformComponent },
-  { path: 'profile', component: UserinfoComponent, canActivate: [AuthenticationGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthenticationGuard] },
   { path: 'findButik', component: FindButikComponent},
   { path: '**', redirectTo: '' } // MUST BE LAST IN ARRAY!
 ];
