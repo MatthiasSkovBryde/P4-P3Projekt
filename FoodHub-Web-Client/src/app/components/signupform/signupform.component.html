@@ -1,3 +1,4 @@
+<!--
 <div class="container">
     <h1>signup</h1>
     <form>
@@ -29,4 +30,55 @@
 
         <button type="submit" class="btn btn-primary" (click)="submit()">signup</button>
     </form>
+</div>
+-->
+<div class="height">
+  <form class="container row g-3">
+
+    <div class="col-6">
+      <label for="firstname" class="form-label">Fornavn</label>
+      <input type="text" placeholder="Fornavn" name="firstname" [(ngModel)]="customerRequest.firstName"><i class='fas fa-user-alt'></i>
+    </div>
+  
+    <div class="col-6">
+      <label for="lastname" class="form-label">Efternavn</label>
+      <input type="text" placeholder="Efternavn" name="lastname" [(ngModel)]="customerRequest.lastName"><i class='fas fa-user-alt'></i>
+    </div>
+  
+    <div class="col-12">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="accountRequest.email"><i class="fa fa-envelope"></i>
+    </div>
+    
+    <div class="col-6">
+      <label for="pwd" class="form-label">Password</label>
+      <input [type]="changetype?'password':'text'" placeholder="Enter Password" name="password"  [(ngModel)]="passwordValidator">
+      <span class="eyeicon" (click)="viewpass()"><i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"></i></span>
+    </div>
+  
+    <div class="col-6">
+      <label for="pwd" class="form-label">Confirm Password</label>
+      <input [type]="changetype?'password':'text'" placeholder="Confirm Password" name="password"  [(ngModel)]="passwordValidator">
+        <span class="eyeicon" (click)="viewpass()"> <i [ngClass]="visible? 'fa fa-eye-slash':'fa fa-eye'"></i></span>
+    </div>
+  
+    <div class="col-4">
+      <label for="address" class="form-label">Addresse</label>
+      <input type="text" placeholder="Addresse" name="address" [(ngModel)]="customerRequest.address"><i class="fa fa-map-marker"></i>
+    </div>
+  
+    <div class="col-4">
+      <label for="address" class="form-label">Postkode</label>
+      <input type="text" placeholder="Postkode" name="zipcode" [(ngModel)]="customerRequest.zipCode"><i class="fa fa-map-marker"></i>
+    </div>
+
+    <div class="col-4">
+      <label for="address" class="form-label">Telefonnummer</label>
+      <input type="text" placeholder="Telefonnummer" name="phonenr" [(ngModel)]="customerRequest.phoneNumber"><i class="fa fa-phone"></i>
+    </div>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" (click)="submit()">signup</button>
+    </div>
+  </form>
 </div>

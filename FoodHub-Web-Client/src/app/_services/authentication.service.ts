@@ -31,9 +31,7 @@ export class AuthenticationService {
         this.OnTokenChanged = this.accessTokenSubject.asObservable();
     }
 
-    /** Sends a string with a email, together with a string of the password,
-     * Responds with a new RefreshToken and an AccessToken
-     */
+    /* Sends a string with a email, together with a string of the password, Responds with a new RefreshToken and an AccessToken */
     public authenticate(request: AuthenticationRequest): Observable<AuthenticationResponse> {
         return this.http.post<AuthenticationResponse>(this.url, request, { withCredentials: true }).pipe(map(response => {
             this.accessTokenSubject.next(response.accessToken);
@@ -42,7 +40,7 @@ export class AuthenticationService {
     }
 
     public refreshToken(): Observable<AuthenticationResponse> {
-        return this.http.put<AuthenticationResponse>(this.url, {}, { withCredentials: true}).pipe(map(response => {
+        return this.http.put<AuthenticationResponse>(this.url, {}, { withCredentials: true }).pipe(map(response => {
             this.accessTokenSubject.next(response.accessToken);
             return response;
         }));

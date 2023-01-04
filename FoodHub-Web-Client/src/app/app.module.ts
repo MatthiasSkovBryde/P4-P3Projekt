@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { SignupformComponent } from './components/signupform/signupform.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { UserinfoComponent } from './components/userinfo/userinfo.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ProductPageComponent } from './components/product-page/product-page.component';
@@ -33,7 +33,7 @@ import { FindButikComponent } from './components/find-butik/find-butik.component
     SignupformComponent,
     FooterComponent,
     ProductListComponent,
-    UserinfoComponent,
+    ProfileComponent,
     ProductPageComponent,
     FindButikComponent,
   ],

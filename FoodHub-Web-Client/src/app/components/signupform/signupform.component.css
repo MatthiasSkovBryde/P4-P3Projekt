@@ -1,11 +1,10 @@
 .container {
-    width: 420px;
+    width: 800px;
     height: cover;
     margin: auto;
     border-radius: 3px;
     color: white;
-    background: linear-gradient(90deg, rgba(6,0,122,1) 0%, rgba(0,0,223,1) 35%, rgba(9,0,182,1) 100%);
-    border: 1px solid black;
+    background-color: #031926;
     text-transform: capitalize;
 }
 
@@ -23,7 +22,7 @@ input[type=text],
 input[type=password] {
     width: 320px;
     height: 35px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     border: 2px solid black;
     font-size: 18px;
 }

@@ -1,8 +1,4 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-
-namespace FoodHub_Web_API.Helpers
+﻿namespace FoodHub_Web_API.Helpers
 {
     /// <summary>
     /// Handles JWT Tokens
