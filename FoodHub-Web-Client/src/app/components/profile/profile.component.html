@@ -1,45 +1,53 @@
 <div class="height">
-    <form class="container row g-3">
-        <h1 class="text-white text-center">Min Profil</h1>
+    <form class="container row g-3" name="form">
+        <h1 class="text-white text-center title">Min Profil</h1>
 
-        <div class="col-4" style="margin-top: 0px; margin-left: 35px;">
-            <img src="../../../assets/user.png" (click)="egg()" class="rounded-circle" width="150">
-            <div class="mt-3">
-                <h4>{{customer.firstName}} {{customer.lastName}}</h4>
-                <p class="text-light mb-1">{{customer.account.role}}</p>
+        <div class="col-4">
+            <div class="mx-auto mt-5">
+                <img src="../../../assets/user.png" (click)="egg()" class="rounded-circle position-relative top-25 start-50 translate-middle" width="150" style="margin-bottom: -50px; margin-top: 56.5px;">
+            </div>
+            <div class="mt-3 ">
+                <h4 class="text-center">{{customer.firstName}} {{customer.lastName}}</h4>
+                <p class="text-light mb-1 text-center" *ngIf="isAdmin">{{customer.account.role}}</p>
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-7">
             <div class="col-12">
-                <label for="firstname" class="form-label noselect">Fornavn :</label>
-                <input type="text" name="firstName" [(ngModel)]='customer.firstName' [disabled]="allowEdit ? false : true">
+                <label class="form-label noselect">Fornavn :</label>
+                <input class="form-control" type="text" id="firstName" [(ngModel)]='customer.firstName' [disabled]="allowEdit ? false : true" name="firstnameInput">
             </div>
+            <span *ngIf="!allowSaveF" class="text-danger ng-hide">*Skal udfylde fornavn</span>
     
             <div class="col-12">
                 <label for="lastName" class="form-label noselect">Efternavn :</label>
-                <input type="text" name="lastName" [(ngModel)]='customer.lastName' [disabled]="allowEdit ? false : true">
+                <input type="text" name="lastName" id="lastName" [(ngModel)]='customer.lastName' [disabled]="allowEdit ? false : true">
             </div>
+            <span *ngIf="!allowSaveL" class="text-danger ng-hide">*Skal udfylde efternavn</span>
     
             <div class="col-12">
                 <label for="telefonnummer" class="form-label noselect">Telefonnummer :</label>
-                <input type="text" name="telefonnummer" [(ngModel)]='customer.phoneNumber' [disabled]="allowEdit ? false : true">
+                <input type="text" name="telefonnummer" id="phoneNumber" [(ngModel)]='customer.phoneNumber' [disabled]="allowEdit ? false : true">
             </div>
+            <span *ngIf="!allowSaveP" class="text-danger ng-hide">*Skal udfylde telefonnummer</span>
     
             <div class="col-12">
                 <label for="email" class="form-label noselect" style="margin-right: 15px;">Email :</label>
-                <input type="text" name="email" [(ngModel)]='customer.account.email' [disabled]="allowEdit ? false : true">
+                <input type="text" name="email" id="email" [(ngModel)]='customer.account.email' [disabled]="allowEdit ? false : true">
             </div>
+            <span *ngIf="!allowSaveE" class="text-danger ng-hide">*Skal udfylde Email</span>
     
             <div class="col-12">
                 <label for="address" class="form-label noselect">Addresse :</label>
-                <input type="text" name="address" [(ngModel)]='customer.address' [disabled]="allowEdit ? false : true">
+                <input type="text" name="address" id="address" [(ngModel)]='customer.address' [disabled]="allowEdit ? false : true">
             </div>
+            <span *ngIf="!allowSaveA" class="text-danger ng-hide">*Skal udfylde addresse</span>
     
             <div class="col-12">
-                <label for="postnummer" class="form-label noselect">Postnummer :</label>
-                <input type="text" name="postKode" [(ngModel)]='customer.zipCode' [disabled]="allowEdit ? false : true">
+                <label for="zipCode" class="form-label noselect">Postnummer :</label>
+                <input type="text" name="postnummer" id="zipCode" [(ngModel)]='customer.zipCode' [disabled]="allowEdit ? false : true">
             </div>
+            <span *ngIf="!allowSaveZ" class="text-danger ng-hide">*Skal udfylde postnummer</span>
     
             <div class="col-12">
                 <label for="created_At" class="form-label noselect">Konto oprettet :</label>
@@ -47,8 +55,12 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" (click)="edit()">Edit</button>
-        <button class="btn btn-primary" (click)="save()" [disabled]="allowEdit ? false : true">Save</button>
-        
+        <div class="col-6">
+            <button class="btn btn-primary float-end" (click)="edit()" style="margin-top: 10px; margin-bottom: 20px;">Edit</button>
+        </div>
+
+        <div class="col-6">
+            <button class="btn btn-primary float-start" (click)="save()" [disabled]="allowEdit ? false : true" style="margin-top: 10px; margin-bottom: 20px;">Save</button>
+        </div>
     </form>
 </div>
